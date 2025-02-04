@@ -30,7 +30,7 @@ class CreateNewUserRequest extends FormRequest
             "first_name" => "required|string|max:50",
             "last_name"=>"required|string|max:50",
             "username"=>"required|string|max:50|unique:$users_core_table,username",
-            "email"=>,
+//            "email"=>,
             "email_verified_at",
             "password",
         ];
