@@ -3,10 +3,11 @@
 namespace Bhry98\LaravelUsersCore\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Str;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class UsersCoreUsersModel extends Model implements JWTSubject
+class UsersCoreUsersModel extends User implements JWTSubject
 {
     // start env
     const TABLE_NAME = "bhry98_users_core_types";

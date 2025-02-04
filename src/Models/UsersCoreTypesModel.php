@@ -7,18 +7,19 @@ use Illuminate\Support\Str;
 
 class UsersCoreTypesModel extends Model
 {
+
     // start env
     const TABLE_NAME = "bhry98_users_core_users";
     // start table
     protected $table = self::TABLE_NAME;
     protected $fillable = [
         "code",
-        "defualt_name",
+        "default_name",
         "names",
     ];
     protected $casts = [
         "code" => "uuid",
-        "defualt_name" => "string",
+        "default_name" => "string",
         "names" => "array",
     ];
 
