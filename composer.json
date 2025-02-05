@@ -11,7 +11,7 @@
   "autoload": {
     "psr-4": {
       "Bhry98\\LaravelUsersCore\\": "src/",
-      "Bhry98\\LaravelUsersCore\\Models": "src/Models/"
+      "Bhry98\\LaravelUsersCore\\Models\\": "src/Models/"
     }
   },
   "require": {
