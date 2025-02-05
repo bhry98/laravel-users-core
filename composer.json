@@ -7,6 +7,7 @@
     "tymon/jwt-auth": "^2.0"
   },
   "license": "MIT",
+  "version": "0.0.1",
   "autoload": {
     "psr-4": {
       "Bhry98\\LaravelUsersCore\\": "src/"
@@ -17,8 +18,19 @@
       "name": "bhry98"
     }
   ],
-
+  "scripts": {
+    "post-autoload-dump": [
+      "@php artisan vendor:publish --tag=bhry98-users-core --force",
+      "@php artisan vendor:publish --tag=bhry98-users-core --force"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Bhry98\\LaravelUsersCore\\LaravelUsersCoreServiceProvider"
+      ]
+    }
+  },
   "minimum-stability": "dev",
   "prefer-stable": true
-
 }

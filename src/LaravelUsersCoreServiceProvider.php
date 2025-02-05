@@ -20,9 +20,16 @@ class LaravelUsersCoreServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(path: __DIR__ . '/Routes/users-core.php');
         // Load migrations
         $this->loadMigrationsFrom(paths: __DIR__ . '/Migrations');
-        // Publish files for customization
-        $this->publishes([
-            __DIR__ . '/Config/bhry98-users-core.php' => config_path(path: 'bhry98-users-core.php'),
-        ], groups: 'bhry98');
+        // Automatically publish migrations
+        if ($this->app->runningInConsole()) {
+            // Publish migration file
+            $this->publishes([
+                __DIR__ . '/Migrations/' => database_path('migrations'),
+            ], 'bhry98-users-core');
+            // Publish config file
+            $this->publishes([
+                __DIR__ . '/Config/bhry98-users-core.php' => config_path('bhry98-users-core.php'),
+            ], 'bhry98-users-core');
+        }
     }
 }
