@@ -17,19 +17,19 @@ return new class extends Migration {
             table: UsersCoreSessionsModel::TABLE_NAME,
             callback: function (Blueprint $table) {
 //                $table->id();
-                $table->foreignId(column: 'user_id')
-                    ->nullable()
-                    ->index()
-                    ->references(column: 'id')
-                    ->on(table: UsersCoreUsersModel::class)
-                    ->cascadeOnUpdate()
-                    ->cascadeOnDelete();
+//                $table->foreignId(column: 'user_id')
+//                    ->nullable()
+//                    ->index()
+//                    ->references(column: 'id')
+//                    ->on(table: UsersCoreUsersModel::class)
+//                    ->cascadeOnUpdate()
+//                    ->cascadeOnDelete();
 //                $table->string(column: 'ip_address', length: 45)->nullable();
 //                $table->text(column: 'user_agent')->nullable();
 //                $table->longText(column: 'payload');
 //                $table->integer(column: 'last_activity')->index();
                 $table->string('id')->primary();
-//                $table->foreignId('user_id')->nullable()->index();
+                $table->foreignId('user_id')->nullable()->index();
                 $table->string('ip_address', 45)->nullable();
                 $table->text('user_agent')->nullable();
                 $table->longText('payload');

@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="update UsersCoreSessionsModel.php last_activity casts to integer">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="update users_core_sessions.php">
       <change beforePath="$PROJECT_DIR$/src/Migrations/users_core_sessions.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/users_core_sessions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreSessionsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreSessionsModel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +192,7 @@
       <workItem from="1738684478075" duration="696000" />
       <workItem from="1738690497904" duration="8581000" />
       <workItem from="1738754850630" duration="194000" />
-      <workItem from="1738756304052" duration="2865000" />
+      <workItem from="1738756304052" duration="2988000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -268,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738759074024</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update users_core_sessions.php">
+      <option name="closed" value="true" />
+      <created>1738759183362</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1738759183362</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +299,7 @@
     <MESSAGE value="add session migrate and model" />
     <MESSAGE value="fix composer.json" />
     <MESSAGE value="update UsersCoreSessionsModel.php last_activity casts to integer" />
-    <option name="LAST_COMMIT_MESSAGE" value="update UsersCoreSessionsModel.php last_activity casts to integer" />
+    <MESSAGE value="update users_core_sessions.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="update users_core_sessions.php" />
   </component>
 </project>
