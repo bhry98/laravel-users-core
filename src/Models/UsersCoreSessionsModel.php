@@ -18,6 +18,7 @@ class UsersCoreSessionsModel extends Model
         "last_activity",
     ];
     protected $casts = [
+        "last_activity" => "integer",
     ];
 
     public function user(): \Illuminate\Database\Eloquent\Relations\HasOne
