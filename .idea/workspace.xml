@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="update composer.json">
+      <change afterPath="$PROJECT_DIR$/src/Migrations/users_core_sessions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/UsersCoreSessionsModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Laravel-Core-Users-Package.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Laravel-Core-Users-Package.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,22 +135,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bhry98/Projects/FL/Anany-Mora-Electric&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/bhry98/Projects/FL/Laravel-Core-Users-Package/src/Models",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Models" />
+      <recent name="$PROJECT_DIR$/src/Migrations" />
       <recent name="$PROJECT_DIR$/Packages/Bhry98/LaravelUsersCore/src" />
       <recent name="$PROJECT_DIR$/Packages/src/Services" />
       <recent name="$PROJECT_DIR$/Packages/src/Requests/auth" />
@@ -191,7 +195,7 @@
       <workItem from="1738684478075" duration="696000" />
       <workItem from="1738690497904" duration="8581000" />
       <workItem from="1738754850630" duration="194000" />
-      <workItem from="1738756304052" duration="1974000" />
+      <workItem from="1738756304052" duration="2409000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -233,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738756914012</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update composer.json">
+      <option name="closed" value="true" />
+      <created>1738758286739</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738758286739</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
