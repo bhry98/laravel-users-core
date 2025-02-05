@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="update users_core_sessions.php">
-      <change beforePath="$PROJECT_DIR$/src/Migrations/users_core_sessions.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/users_core_sessions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +194,7 @@
       <workItem from="1738684478075" duration="696000" />
       <workItem from="1738690497904" duration="8581000" />
       <workItem from="1738754850630" duration="194000" />
-      <workItem from="1738756304052" duration="2988000" />
+      <workItem from="1738756304052" duration="3679000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -274,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738759183362</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update users_core_sessions.php">
+      <option name="closed" value="true" />
+      <created>1738759302345</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1738759302345</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

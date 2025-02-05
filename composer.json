@@ -29,13 +29,7 @@
       "providers": [
         "Bhry98\\LaravelUsersCore\\LaravelUsersCoreServiceProvider"
       ]
-    }
+    },
+    "minimum-stability": "stable"
   }
-
-
-
-
-
-
-
 }
