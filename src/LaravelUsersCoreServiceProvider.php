@@ -32,4 +32,9 @@ class LaravelUsersCoreServiceProvider extends ServiceProvider
             ], 'bhry98-users-core');
         }
     }
+
+    static function testOutput(): string
+    {
+        return "run successfully";
+    }
 }
