@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Packages/Bhry98/LaravelUsersCore/src" isTestSource="false" packagePrefix="Bhry98\LaravelUsersCore\" />
       <sourceFolder url="file://$MODULE_DIR$/Packages/Bhry98/old/src" isTestSource="false" packagePrefix="Bhry98\LaravelUsersCore\" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="Bhry98\LaravelUsersCore\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Models" isTestSource="false" packagePrefix="Bhry98\LaravelUsersCore\Models" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/carbonphp/carbon-doctrine-types" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
