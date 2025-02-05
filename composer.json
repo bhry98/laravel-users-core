@@ -27,7 +27,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Bhry98\\LaravelUsersCore\\LaravelUsersCoreServiceProvider"
+        "Bhry98UsersCore\\LaravelUsersCoreServiceProvider"
       ]
     },
     "minimum-stability": "stable"

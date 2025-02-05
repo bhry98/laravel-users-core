@@ -193,7 +193,7 @@
       <workItem from="1738684478075" duration="696000" />
       <workItem from="1738690497904" duration="8581000" />
       <workItem from="1738754850630" duration="194000" />
-      <workItem from="1738756304052" duration="4735000" />
+      <workItem from="1738756304052" duration="4821000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -323,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738760976522</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update composer.json">
+      <option name="closed" value="true" />
+      <created>1738761048986</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1738761048986</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
