@@ -1,6 +1,6 @@
 <?php
 
-namespace Bhry98\LaravelUsersCore\Requests\auth;
+namespace Bhry98UsersCore\Requests\auth;
 
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;
 use Illuminate\Foundation\Http\FormRequest;

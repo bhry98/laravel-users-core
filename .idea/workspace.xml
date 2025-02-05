@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="update composer.json">
-      <change beforePath="$PROJECT_DIR$/.idea/Laravel-Core-Users-Package.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Laravel-Core-Users-Package.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/UsersAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UsersAuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/UsersCoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UsersCoreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LaravelUsersCoreServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LaravelUsersCoreServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreExtraColumnsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreExtraColumnsModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreExtraValuesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreExtraValuesModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreTypesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreTypesModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreUsersModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreUsersModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Requests/RegistrationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Requests/RegistrationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Requests/auth/LoginRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Requests/auth/LoginRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Requests/auth/RegistrationByTypeRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Requests/auth/RegistrationByTypeRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Requests/auth/RegistrationNormalUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Requests/auth/RegistrationNormalUserRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Requests/users/CreateNewUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Requests/users/CreateNewUserRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +208,7 @@
       <workItem from="1738684478075" duration="696000" />
       <workItem from="1738690497904" duration="8581000" />
       <workItem from="1738754850630" duration="194000" />
-      <workItem from="1738756304052" duration="4821000" />
+      <workItem from="1738756304052" duration="5789000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -331,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738761048986</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="update composer.json">
+      <option name="closed" value="true" />
+      <created>1738761131455</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1738761131455</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

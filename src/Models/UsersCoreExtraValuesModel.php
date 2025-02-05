@@ -1,6 +1,6 @@
 <?php
 
-namespace Bhry98\LaravelUsersCore\Models;
+namespace Bhry98UsersCore\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
