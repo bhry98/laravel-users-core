@@ -7,7 +7,7 @@ use Bhry98\LaravelUsersCore\UsersCoreTypesModelTest;
 
 class UsersCoreTypesService
 {
-    private const DEFAULT_TYPES = [
+     const ADMIN_USER = [
         "code" => "admin-user",
         "default_name" => "Admin User",
         "names" => [
@@ -15,7 +15,7 @@ class UsersCoreTypesService
             "en" => "Admin User",
         ]
     ];
-    private const NORMAL_USER = [
+     const NORMAL_USER = [
         "code" => "normal-user",
         "default_name" => "Normal User",
         "names" => [
