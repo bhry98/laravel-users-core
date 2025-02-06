@@ -13,7 +13,7 @@ class UsersCoreUsersService
         // check if normal user exists
         $normalUserType = UsersCoreTypesService::getNormalUserType();
         // if normal user type not found return null
-        if (!$normalUserType) die();
+        if (!$normalUserType) return null;
         // add normal user in database
         $data['type_id'] = $normalUserType->id;
         $user = UsersCoreUsersModel::create($data);

@@ -25,7 +25,7 @@ class UsersAuthController extends Controller
                     "user" => $user,
                 ]);
             } else {
-
+                if ($user === null) die();
                 return bhry98_response_success_without_data();
             }
         } catch (\Exception $e) {
