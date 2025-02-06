@@ -26,8 +26,7 @@ class UsersCoreTypesService
 
     static function getNormalUserType()
     {
-        return UsersCoreTypesModelTest::query()->get()->first();
-        $data= UsersCoreTypesModel::where('code', 'normal-user')->first();
-        dd($data);
+        return UsersCoreTypesModel::where('code', self::NORMAL_USER['code'])->first();
+
     }
 }

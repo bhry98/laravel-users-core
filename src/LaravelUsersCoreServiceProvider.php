@@ -12,7 +12,6 @@ class LaravelUsersCoreServiceProvider extends ServiceProvider
     {
         // Merge package config
         $this->mergeConfigFrom(path: __DIR__ . '/Config/bhry98-users-core.php', key: 'bhry98-users-core');
-
     }
 
     public function boot(): void
