@@ -1,6 +1,6 @@
 <?php
 
-namespace Bhry98UsersCore\Services;
+namespace Bhry98\LaravelUsersCore\Services;
 
 use Bhry98\LaravelUsersCore\Models\UsersCoreExtraColumnsModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;

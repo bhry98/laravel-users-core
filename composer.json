@@ -10,7 +10,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Bhry98UsersCore\\": "src/"
+      "Bhry98\\LaravelUsersCore\\": "src/"
     }
   },
   "require": {
@@ -27,7 +27,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Bhry98UsersCore\\LaravelUsersCoreServiceProvider"
+        "Bhry98\\LaravelUsersCore\\LaravelUsersCoreServiceProvider"
       ]
     },
     "minimum-stability": "stable"

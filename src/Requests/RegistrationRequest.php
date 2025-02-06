@@ -1,6 +1,6 @@
 <?php
 
-namespace Bhry98UsersCore\Requests;
+namespace Bhry98\LaravelUsersCore\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

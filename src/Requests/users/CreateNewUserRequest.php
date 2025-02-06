@@ -1,6 +1,6 @@
 <?php
 
-namespace Bhry98UsersCore\Requests\users;
+namespace Bhry98\LaravelUsersCore\Requests\users;
 
 use Bhry98\LaravelUsersCore\Models\UsersCoreTypesModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;

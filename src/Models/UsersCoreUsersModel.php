@@ -1,8 +1,7 @@
 <?php
 
-namespace Bhry98UsersCore\Models;
+namespace Bhry98\LaravelUsersCore\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Str;
 use Tymon\JWTAuth\Contracts\JWTSubject;

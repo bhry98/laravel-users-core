@@ -1,6 +1,6 @@
 <?php
 
-namespace Bhry98UsersCore\Resources;
+namespace Bhry98\LaravelUsersCore\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;

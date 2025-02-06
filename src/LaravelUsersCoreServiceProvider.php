@@ -1,6 +1,6 @@
 <?php
 
-namespace Bhry98UsersCore;
+namespace Bhry98\LaravelUsersCore;
 
 use Illuminate\Support\ServiceProvider;
 
