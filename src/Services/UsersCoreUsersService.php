@@ -4,20 +4,27 @@ namespace Bhry98\LaravelUsersCore\Services;
 
 use Bhry98\LaravelUsersCore\Models\UsersCoreExtraColumnsModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;
+use Illuminate\Support\Facades\Log;
 
 class UsersCoreUsersService
 {
-
-
     public function registerNormalUser(array $data)
     {
         // check if normal user exists
-       return $normalUserType = UsersCoreTypesService::getNormalUserType();
-        $normalUserType = null;
+        $normalUserType = UsersCoreTypesService::getNormalUserType();
         // if normal user type not found return null
         if (!$normalUserType) return null;
         // add normal user in database
         $data['type_id'] = $normalUserType->id;
-        return UsersCoreUsersModel::create($data);
+        $user = UsersCoreUsersModel::create($data);
+        if ($user) {
+            // if added successfully add log [info] and return user
+            Log::info("User registered successfully with id {$user->id}", ['user' => $user]);
+            return $user;
+        } else {
+            // if added successfully add log [error] and return user
+            Log::error("User registered field");
+            return null;
+        }
     }
 }

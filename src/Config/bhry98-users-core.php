@@ -1,9 +1,13 @@
 <?php
 return [
 
-    /**
-     * Auth Routes Configurations
-     */
+
+    "auth_guards" => env(key: 'BHRY98_AUTH_GUARDS', default: "bhry98"),
+
+//
+//    /**
+//     * Auth Routes Configurations
+//     */
 //    "auth_apis" => [
 //        "prefix" => "auth",
 //        "middleware" => ["web"],

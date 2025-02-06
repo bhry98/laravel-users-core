@@ -27,6 +27,5 @@ class UsersCoreTypesService
     static function getNormalUserType()
     {
         return UsersCoreTypesModel::where('code', self::NORMAL_USER['code'])->first();
-
     }
 }

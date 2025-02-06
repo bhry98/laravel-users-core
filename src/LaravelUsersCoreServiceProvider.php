@@ -2,8 +2,10 @@
 
 namespace Bhry98\LaravelUsersCore;
 
+use Bhry98\LaravelUsersCore\Models\UsersCorePersonalAccessToken;
 use Bhry98\LaravelUsersCore\Models\UsersCoreTypesModel;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Sanctum\Sanctum;
 
 class LaravelUsersCoreServiceProvider extends ServiceProvider
 {
@@ -16,6 +18,8 @@ class LaravelUsersCoreServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        // Overriding Default Personal Access Token Models
+        Sanctum::usePersonalAccessTokenModel(UsersCorePersonalAccessToken::class);
         // Load package routes
         $this->loadRoutesFrom(path: __DIR__ . '/Routes/users-core.php');
         // Load migrations

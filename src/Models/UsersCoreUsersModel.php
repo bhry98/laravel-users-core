@@ -2,12 +2,14 @@
 
 namespace Bhry98\LaravelUsersCore\Models;
 
-use Illuminate\Foundation\Auth\User;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Str;
-use Tymon\JWTAuth\Contracts\JWTSubject;
+use Laravel\Sanctum\HasApiTokens;
 
-class UsersCoreUsersModel extends User implements JWTSubject
+class UsersCoreUsersModel extends Authenticatable
 {
+    use HasApiTokens;
+
     // start env
     const TABLE_NAME = "bhry98_users_core_types";
     // start table

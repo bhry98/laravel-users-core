@@ -9,6 +9,9 @@
     "user types"
   ],
   "autoload": {
+    "files": [
+      "src/Helpers/responces.php"
+    ],
     "psr-4": {
       "Bhry98\\LaravelUsersCore\\": "src/"
     }
@@ -16,7 +19,7 @@
   "require": {
     "php": ">=8.2",
     "laravel/framework": ">=11.0",
-    "tymon/jwt-auth": "^2.0"
+    "laravel/sanctum": "^4.0"
   },
   "authors": [
     {
