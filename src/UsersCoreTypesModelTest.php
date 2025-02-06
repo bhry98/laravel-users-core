@@ -1,40 +1,29 @@
 <?php
 
-namespace Bhry98\LaravelUsersCore\Models;
+namespace Bhry98\LaravelUsersCore;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class UsersCoreExtraColumnsModel extends Model
+class UsersCoreTypesModelTest extends Model
 {
     // start env
-    const TABLE_NAME = "bhry98_users_core_extra_columns";
+    const TABLE_NAME = "bhry98_users_core_users";
     // start table
     protected $table = self::TABLE_NAME;
+    public $timestamps = true;
     protected $fillable = [
         "code",
-        "type_id",
-        "default_input_name",
-        "input_names",
-        "validation"
+        "default_name",
+        "names",
     ];
     protected $casts = [
         "code" => "uuid",
-        "input_names" => "array",
-        "validation" => "array",
-
+        "default_name" => "string",
+        "names" => "array",
     ];
 
-    public function Type(): \Illuminate\Database\Eloquent\Relations\HasOne
-    {
-        return $this->hasOne(
-            related: UsersCoreTypesModel::class,
-            foreignKey: "id",
-            localKey: "type_id"
-        );
-    }
-
-    protected static function booted(): void
+    protected static function boot(): void
     {
         static::creating(function ($model) {
             // create new unique code
@@ -50,4 +39,5 @@ class UsersCoreExtraColumnsModel extends Model
         }
         return $code;
     }
+
 }

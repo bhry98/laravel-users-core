@@ -2,6 +2,7 @@
 
 namespace Bhry98\LaravelUsersCore;
 
+use Bhry98\LaravelUsersCore\Models\UsersCoreTypesModel;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelUsersCoreServiceProvider extends ServiceProvider
@@ -9,9 +10,9 @@ class LaravelUsersCoreServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-
         // Merge package config
         $this->mergeConfigFrom(path: __DIR__ . '/Config/bhry98-users-core.php', key: 'bhry98-users-core');
+
     }
 
     public function boot(): void

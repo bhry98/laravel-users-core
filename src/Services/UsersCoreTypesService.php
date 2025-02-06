@@ -3,6 +3,7 @@
 namespace Bhry98\LaravelUsersCore\Services;
 
 use Bhry98\LaravelUsersCore\Models\UsersCoreTypesModel;
+use Bhry98\LaravelUsersCore\UsersCoreTypesModelTest;
 
 class UsersCoreTypesService
 {
@@ -23,8 +24,9 @@ class UsersCoreTypesService
         ],
     ];
 
-    static function getNormalUserType(): UsersCoreTypesModel|null
+    static function getNormalUserType()
     {
+        return UsersCoreTypesModelTest::query()->get()->first();
         $data= UsersCoreTypesModel::where('code', 'normal-user')->first();
         dd($data);
     }

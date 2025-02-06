@@ -15,7 +15,7 @@
   },
   "require": {
     "php": ">=8.2",
-    "laravel/framework": ">=11.0",
+    "laravel/laravel": ">=11.0",
     "tymon/jwt-auth": "^2.0"
   },
   "authors": [

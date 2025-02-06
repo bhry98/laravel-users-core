@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class UsersCoreExtraValuesModel extends Model
 {
     // start env
-    const TABLE_NAME = "users_core_extra_values";
+    const TABLE_NAME = "bhry98_users_core_extra_values";
     // start table
     protected $table = self::TABLE_NAME;
     protected $fillable = [

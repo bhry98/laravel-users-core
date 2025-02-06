@@ -41,7 +41,7 @@ class UsersCoreUsersModel extends User implements JWTSubject
             localKey: "id");
     }
 
-    protected static function boot(): void
+    protected static function booted(): void
     {
         static::creating(function ($model) {
             // create new unique code

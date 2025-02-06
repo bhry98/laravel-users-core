@@ -11,6 +11,7 @@ class UsersCoreTypesModel extends Model
     const TABLE_NAME = "bhry98_users_core_users";
     // start table
     protected $table = self::TABLE_NAME;
+    public $timestamps = true;
     protected $fillable = [
         "code",
         "default_name",
@@ -22,7 +23,7 @@ class UsersCoreTypesModel extends Model
         "names" => "array",
     ];
 
-    protected static function boot(): void
+    protected static function booted(): void
     {
         static::creating(function ($model) {
             // create new unique code

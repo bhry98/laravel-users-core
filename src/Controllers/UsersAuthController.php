@@ -3,7 +3,6 @@
 namespace Bhry98\LaravelUsersCore\Controllers;
 
 use App\Http\Controllers\Controller;
-use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;
 use Bhry98\LaravelUsersCore\Requests\auth\LoginRequest;
 use Bhry98\LaravelUsersCore\Requests\auth\RegistrationNormalUserRequest;
 use Bhry98\LaravelUsersCore\Services\UsersCoreUsersService;

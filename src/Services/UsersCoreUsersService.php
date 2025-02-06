@@ -12,9 +12,8 @@ class UsersCoreUsersService
     public function registerNormalUser(array $data)
     {
         // check if normal user exists
-//        $normalUserType = UsersCoreTypesService::getNormalUserType();
+       return $normalUserType = UsersCoreTypesService::getNormalUserType();
         $normalUserType = null;
-        dd(UsersCoreExtraColumnsModel::count());
         // if normal user type not found return null
         if (!$normalUserType) return null;
         // add normal user in database
