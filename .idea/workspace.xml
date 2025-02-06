@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="finish registration flow for normal user type">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/UsersAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UsersAuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +192,7 @@
       <workItem from="1738754850630" duration="194000" />
       <workItem from="1738756304052" duration="7469000" />
       <workItem from="1738828362928" duration="6742000" />
-      <workItem from="1738836959637" duration="6657000" />
+      <workItem from="1738836959637" duration="6739000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -420,7 +418,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738847449303</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="finish registration flow for normal user type">
+      <option name="closed" value="true" />
+      <created>1738847558981</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1738847558981</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
