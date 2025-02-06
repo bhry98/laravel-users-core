@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/src/Models/UsersCorePersonalAccessToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" afterDir="false" />
+    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="finish registration flow for normal user type">
       <change beforePath="$PROJECT_DIR$/src/Controllers/UsersAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UsersAuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LaravelUsersCoreServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LaravelUsersCoreServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreUsersModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreUsersModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +193,7 @@
       <workItem from="1738754850630" duration="194000" />
       <workItem from="1738756304052" duration="7469000" />
       <workItem from="1738828362928" duration="6742000" />
-      <workItem from="1738836959637" duration="5314000" />
+      <workItem from="1738836959637" duration="5580000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -396,7 +387,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738844060569</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="finish registration flow for normal user type">
+      <option name="closed" value="true" />
+      <created>1738845773298</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1738845773298</updated>
+    </task>
+    <task id="LOCAL-00026" summary="finish registration flow for normal user type">
+      <option name="closed" value="true" />
+      <created>1738845832131</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1738845832131</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,6 +435,7 @@
     <MESSAGE value="fix error [model] not found" />
     <MESSAGE value="add laravel 12" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="finish registration flow for normal user type" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish registration flow for normal user type" />
   </component>
 </project>
