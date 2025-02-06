@@ -7,6 +7,7 @@ use Bhry98\LaravelUsersCore\Requests\auth\LoginRequest;
 use Bhry98\LaravelUsersCore\Requests\auth\RegistrationNormalUserRequest;
 use Bhry98\LaravelUsersCore\Services\UsersCoreUsersService;
 use Illuminate\Support\Facades\Auth;
+use function Laravel\Prompts\error;
 
 class UsersAuthController extends Controller
 {
@@ -25,7 +26,6 @@ class UsersAuthController extends Controller
                     "user" => $user,
                 ]);
             } else {
-                if ($user === null) die();
                 return bhry98_response_success_without_data();
             }
         } catch (\Exception $e) {

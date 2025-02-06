@@ -194,7 +194,7 @@
       <workItem from="1738754850630" duration="194000" />
       <workItem from="1738756304052" duration="7469000" />
       <workItem from="1738828362928" duration="6742000" />
-      <workItem from="1738836959637" duration="6529000" />
+      <workItem from="1738836959637" duration="6657000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -412,7 +412,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738846003729</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="finish registration flow for normal user type">
+      <option name="closed" value="true" />
+      <created>1738847449303</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1738847449303</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
