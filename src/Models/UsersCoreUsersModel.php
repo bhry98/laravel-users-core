@@ -11,7 +11,7 @@ class UsersCoreUsersModel extends Authenticatable
     use HasApiTokens;
 
     // start env
-    const TABLE_NAME = "bhry98_users_core_types";
+    const TABLE_NAME = "bhry98_users_core_users";
     // start table
     protected $table = self::TABLE_NAME;
     protected $fillable = [
@@ -23,13 +23,17 @@ class UsersCoreUsersModel extends Authenticatable
         "username",
         "email",
         "email_verified_at",
+        "phone_number",
+        "birthdate",
+        "national_id",
         "password",
     ];
     protected $casts = [
         "email_verified_at" => "datetime",
         "password" => "hashed",
         "remember_token" => "string",
-        "code" => "uuid",
+        "birthdate" => "date:Y-m-d",
+        "national_id" => "numeric",
         "created_at" => "datetime",
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
@@ -41,6 +45,14 @@ class UsersCoreUsersModel extends Authenticatable
             related: UsersCoreExtraValuesModel::class,
             foreignKey: "core_user_id",
             localKey: "id");
+    }
+
+    public function Type(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(
+            related: UsersCoreTypesModel::class,
+            foreignKey: "id",
+            localKey: "type_id");
     }
 
     protected static function booted(): void

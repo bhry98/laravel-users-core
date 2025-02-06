@@ -1,12 +1,14 @@
 <?php
 
-namespace Bhry98\LaravelUsersCore\Requests\auth;
+namespace Bhry98\LaravelUsersCore\Http\Requests\auth;
 
-use Bhry98\LaravelUsersCore\Models\UsersCoreTypesModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegistrationByTypeRequest extends FormRequest
+//use\HttpResponseException;
+
+
+class RegistrationNormalUserRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -23,7 +25,7 @@ class RegistrationByTypeRequest extends FormRequest
 
     public function rules(): array
     {
-        return [
+        $roles = [
             "username" => [
                 "required",
                 "string",
@@ -58,11 +60,31 @@ class RegistrationByTypeRequest extends FormRequest
                 "string",
                 "max:50",
             ],
-//            "type" => [
-//                "required",
-//                "exists:" . UsersCoreTypesModel::TABLE_NAME . ",id",
-//            ],
         ];
+        $roles["birthdate"] = [
+            "nullable",
+            "date",
+            "before:" . date('Y') - 10,
+        ];
+        $roles["national_id"] = [
+            "nullable",
+            "numeric",
+            "digits:14",
+        ];
+        return $roles;
+    }
+
+    protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator): void
+    {
+        if ($this->expectsJson()) {
+            throw new \Illuminate\Http\Exceptions\HttpResponseException(
+                bhry98_response_validation_error(
+                    data: (new \Illuminate\Validation\ValidationException($validator))->errors(),
+                    message: (new \Illuminate\Validation\ValidationException($validator))->getMessage()
+                )
+            );
+        }
+        parent::failedValidation($validator);
     }
 
     public function messages(): array

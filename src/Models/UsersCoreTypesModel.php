@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 class UsersCoreTypesModel extends Model
 {
     // start env
-    const TABLE_NAME = "bhry98_users_core_users";
+    const TABLE_NAME = "bhry98_users_core_types";
     // start table
     protected $table = self::TABLE_NAME;
     public $timestamps = true;
@@ -18,10 +18,25 @@ class UsersCoreTypesModel extends Model
         "names",
     ];
     protected $casts = [
-        "code" => "uuid",
         "default_name" => "string",
         "names" => "array",
     ];
+
+    public  function Name($local)
+    {
+        if ($this->names && is_array($this->names) && array_key_exists($local, $this->names)) {
+            return $this->names[$local];
+        } else {
+            return $this->default_name;
+        }
+    }
+    public function users(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(
+            related: UsersCoreUsersModel::class,
+            foreignKey: "type_id",
+            localKey: "id");
+    }
 
     protected static function booted(): void
     {

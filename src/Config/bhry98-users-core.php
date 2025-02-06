@@ -3,7 +3,12 @@ return [
 
 
     "auth_guards" => env(key: 'BHRY98_AUTH_GUARDS', default: "bhry98"),
-
+    /**
+     * available login ways
+     * 1. username => login via username &password
+     *
+     */
+    "login_via" => "username",
 //
 //    /**
 //     * Auth Routes Configurations

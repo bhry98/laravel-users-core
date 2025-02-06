@@ -1,6 +1,6 @@
 <?php
 
-namespace Bhry98\LaravelUsersCore\Seeders;
+namespace Bhry98\LaravelUsersCore\Database\Seeders;
 
 use Bhry98\LaravelUsersCore\Models\UsersCoreTypesModel;
 use Bhry98\LaravelUsersCore\Services\UsersCoreTypesService;

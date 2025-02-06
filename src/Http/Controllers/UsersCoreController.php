@@ -1,10 +1,10 @@
 <?php
 
-namespace Bhry98\LaravelUsersCore\Controllers;
+namespace Bhry98\LaravelUsersCore\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Bhry98\LaravelUsersCore\Http\Resources\UserResource;
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;
-use Bhry98\LaravelUsersCore\Resources\UserResource;
 
 class UsersCoreController extends Controller
 {

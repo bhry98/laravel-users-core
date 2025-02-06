@@ -5,12 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="finish registration flow for normal user type">
-      <change afterPath="$PROJECT_DIR$/src/Commands/UsersTypeRunSeedCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Seeders/UsersCoreTypesSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Migrations/users_core_personal_access_tokens.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Http/Controllers/UsersTypeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Http/Middlewares/GlobalResponseLocale.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Http/Resources/TypeResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Http/Resources/UserResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lang/ar/responses.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lang/en/responses.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/UsersTypeRunSeedCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/UsersTypeRunSeedCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/UsersAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/UsersAuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/UsersCoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/UsersCoreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helpers/responces.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/responses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LaravelUsersCoreServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LaravelUsersCoreServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/users_core_extra_columns.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Migrations/users_core_extra_columns.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/users_core_extra_values.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Migrations/users_core_extra_values.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/users_core_sessions.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Migrations/users_core_sessions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/users_core_types.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Migrations/users_core_types.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/users_core_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Migrations/users_core_users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreExtraColumnsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreExtraColumnsModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UsersCorePersonalAccessToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCorePersonalAccessToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreTypesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreTypesModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreUsersModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreUsersModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Requests/RegistrationRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Requests/auth/LoginRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Requests/auth/LoginRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Requests/auth/RegistrationByTypeRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Requests/auth/RegistrationNormalUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Requests/auth/RegistrationNormalUserRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Requests/users/CreateNewUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Requests/types/GetAllTypesRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/UserResource.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/users-core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Seeders/UsersCoreTypesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Seeders/UsersCoreTypesSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,29 +163,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bhry98/Projects/FL/Laravel-Core-Users-Package/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/bhry98/Projects/FL/Laravel-Core-Users-Package/src/Lang",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Lang" />
+      <recent name="$PROJECT_DIR$/src/Requests" />
+      <recent name="$PROJECT_DIR$/src/Migrations" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/Models" />
-      <recent name="$PROJECT_DIR$/src/Migrations" />
-      <recent name="$PROJECT_DIR$/Packages/Bhry98/LaravelUsersCore/src" />
-      <recent name="$PROJECT_DIR$/Packages/src/Services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Database" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/Packages/Bhry98/LaravelUsersCore/src" />
       <recent name="$PROJECT_DIR$/Packages/Bhry98" />
@@ -198,7 +227,8 @@
       <workItem from="1738754850630" duration="194000" />
       <workItem from="1738756304052" duration="7469000" />
       <workItem from="1738828362928" duration="6742000" />
-      <workItem from="1738836959637" duration="8044000" />
+      <workItem from="1738836959637" duration="14137000" />
+      <workItem from="1738863818640" duration="12022000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -448,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738847713002</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="finish registration flow for normal user type">
+      <option name="closed" value="true" />
+      <created>1738849818438</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1738849818438</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -8,7 +8,7 @@ if (!function_exists(function: 'bhry98_response_success_with_data')) {
                 'code' => 200,
                 'data' => $data,
                 'message' => $message,
-                'note' => 'Success response with data',
+                'note' => __(key: "bhry98::responses.success-with-data"),
             ]
         );
     }
@@ -22,7 +22,7 @@ if (!function_exists(function: 'bhry98_response_success_without_data')) {
                 'code' => 404,
                 'data' => $data,
                 'message' => $message,
-                'note' => 'Success response but no data found',
+                'note' => __(key: "bhry98::responses.success-without-data"),
             ],
             status: 404
         );
@@ -37,7 +37,7 @@ if (!function_exists(function: 'bhry98_response_validation_error')) {
                 'code' => 400,
                 'data' => $data,
                 'message' => $message,
-                'note' => 'Field response with validation error',
+                'note' => __(key: "bhry98::responses.validation-error"),
             ],
             status: 400
         );
@@ -52,7 +52,7 @@ if (!function_exists(function: 'bhry98_response_internal_error')) {
                 'code' => 500,
                 'data' => $data,
                 'message' => $message,
-                'note' => 'Field response with internal error',
+                'note' => __(key: "bhry98::responses.internal-error"),
             ],
             status: 500
         );

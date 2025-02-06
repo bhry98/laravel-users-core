@@ -3,11 +3,10 @@
 namespace Bhry98\LaravelUsersCore\Services;
 
 use Bhry98\LaravelUsersCore\Models\UsersCoreTypesModel;
-use Bhry98\LaravelUsersCore\UsersCoreTypesModelTest;
 
 class UsersCoreTypesService
 {
-     const ADMIN_USER = [
+    const ADMIN_USER = [
         "code" => "admin-user",
         "default_name" => "Admin User",
         "names" => [
@@ -15,7 +14,7 @@ class UsersCoreTypesService
             "en" => "Admin User",
         ]
     ];
-     const NORMAL_USER = [
+    const NORMAL_USER = [
         "code" => "normal-user",
         "default_name" => "Normal User",
         "names" => [
@@ -26,6 +25,21 @@ class UsersCoreTypesService
 
     static function getNormalUserType()
     {
-        return UsersCoreTypesModel::where('code', self::NORMAL_USER['code'])->first();
+        return UsersCoreTypesModel::where('default_name', self::NORMAL_USER['default_name'])->first();
+    }
+
+    static function getAllTypes(int $perPage = 10, string|null $searchForWord = null)
+    {
+        $data = UsersCoreTypesModel::withCount('Users');
+        if (!empty($searchForWord)) {
+            $data->where('default_name', 'like', '%' . $searchForWord . '%');
+        }
+        return $data->paginate(
+            columns: [
+                "*"
+            ],
+            perPage: $perPage,
+            pageName: "Types"
+        );
     }
 }

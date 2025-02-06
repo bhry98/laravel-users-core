@@ -26,6 +26,9 @@ return new class extends Migration {
                 $table->string(column: 'display_name', length: 50);
                 $table->string(column: 'first_name', length: 50);
                 $table->string(column: 'last_name', length: 50);
+                $table->string(column: 'phone_number', length: 20)->nullable()->index()->unique();
+                $table->string(column: 'national_id', length: 20)->nullable()->index()->unique();
+                $table->string(column: 'birthdate', length: 50)->nullable();
                 $table->string(column: 'username', length: 50)->unique();
                 $table->string(column: 'email', length: 100)->unique();
                 $table->timestamp(column: 'email_verified_at')->nullable();

@@ -19,7 +19,6 @@ class UsersCoreExtraColumnsModel extends Model
         "validation"
     ];
     protected $casts = [
-        "code" => "uuid",
         "input_names" => "array",
         "validation" => "array",
 

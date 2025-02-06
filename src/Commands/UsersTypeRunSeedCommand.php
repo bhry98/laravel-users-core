@@ -2,7 +2,7 @@
 
 namespace Bhry98\LaravelUsersCore\Commands;
 
-use Bhry98\LaravelUsersCore\Seeders\UsersCoreTypesSeeder;
+use Bhry98\LaravelUsersCore\Database\Seeders\UsersCoreTypesSeeder;
 use Illuminate\Console\Command;
 
 class UsersTypeRunSeedCommand extends Command
