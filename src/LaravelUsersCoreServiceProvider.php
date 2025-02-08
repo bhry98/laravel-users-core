@@ -2,6 +2,8 @@
 
 namespace Bhry98\LaravelUsersCore;
 
+use Bhry98\LaravelUsersCore\Commands\Bhry98LaravelUsersCoreRunSeedCommand;
+use Bhry98\LaravelUsersCore\Commands\CountriesRunSeedCommand;
 use Bhry98\LaravelUsersCore\Commands\UsersTypeRunSeedCommand;
 use Bhry98\LaravelUsersCore\Models\UsersCorePersonalAccessToken;
 use Bhry98\LaravelUsersCore\Models\UsersCoreSessionsModel;
@@ -56,7 +58,9 @@ class LaravelUsersCoreServiceProvider extends ServiceProvider
     function PackageCommands(): void
     {
         $this->commands([
-            UsersTypeRunSeedCommand::class
+            Bhry98LaravelUsersCoreRunSeedCommand::class,
+            UsersTypeRunSeedCommand::class,
+            CountriesRunSeedCommand::class,
         ]);
     }
 

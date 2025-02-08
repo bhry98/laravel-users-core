@@ -4,14 +4,14 @@ namespace Bhry98\LaravelUsersCore\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Bhry98\LaravelUsersCore\Http\Requests\auth\LoginRequest;
-use Bhry98\LaravelUsersCore\Http\Requests\auth\RegistrationNormalUserRequest;
+use Bhry98\LaravelUsersCore\Http\Requests\auth\RegistrationUserRequest;
 use Bhry98\LaravelUsersCore\Http\Resources\UserResource;
 use Bhry98\LaravelUsersCore\Services\UsersCoreUsersService;
 use Illuminate\Support\Facades\DB;
 
 class UsersAuthController extends Controller
 {
-    function registration(RegistrationNormalUserRequest $request, UsersCoreUsersService $usersCoreServices): \Illuminate\Http\JsonResponse
+    function registration(RegistrationUserRequest $request, UsersCoreUsersService $usersCoreServices): \Illuminate\Http\JsonResponse
     {
         try {
             DB::beginTransaction();
