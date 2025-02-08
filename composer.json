@@ -10,7 +10,8 @@
   ],
   "autoload": {
     "files": [
-      "src/Helpers/responses.php"
+      "src/Helpers/responses.php",
+      "src/Helpers/assets.php"
     ],
     "psr-4": {
       "Bhry98\\LaravelUsersCore\\": "src/"

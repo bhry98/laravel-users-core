@@ -3,20 +3,25 @@
 namespace Bhry98\LaravelUsersCore\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Bhry98\LaravelUsersCore\Http\Requests\auth\LoginRequest;
 use Bhry98\LaravelUsersCore\Http\Resources\UserResource;
-use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;
+use Bhry98\LaravelUsersCore\Services\UsersCoreUsersService;
 
 class UsersCoreController extends Controller
 {
-    function getAll()
+    function getMyProfile(UsersCoreUsersService $usersCoreServices): \Illuminate\Http\JsonResponse
     {
-//        $usersPaginator = UsersCoreUsersModel::whereNull('deleted_at')->paginate(
-//            perPage: 10,
-//            pageName: "Users"
-//        );
 
-        $usersPaginator = UsersCoreUsersModel::all();
-        dd($usersPaginator);
-        return UserResource::collection($usersPaginator)->response()->getData(true);
+        try {
+            $userData = $usersCoreServices->getAuthUser();
+            if (!$userData) return bhry98_response_success_without_data();
+            return bhry98_response_success_with_data(UserResource::make($userData));
+        } catch (\Exception $e) {
+            return bhry98_response_internal_error([
+                'error' => $e->getMessage(),
+                'code' => $e->getCode(),
+                'line' => $e->getLine(),
+            ]);
+        }
     }
 }

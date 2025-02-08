@@ -83,11 +83,14 @@ class RegistrationUserRequest extends FormRequest
             "nullable",
             "numeric",
             "digits:14",
+            "unique:" . UsersCoreUsersModel::TABLE_NAME . ",national_id",
         ];
         $roles["phone_number"] = [
             "nullable",
             "numeric",
             "digits:11",
+            "unique:" . UsersCoreUsersModel::TABLE_NAME . ",phone_number",
+
         ];
         return $roles;
     }

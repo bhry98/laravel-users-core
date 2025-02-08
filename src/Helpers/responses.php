@@ -1,6 +1,9 @@
 <?php
+
+use Illuminate\Http\Resources\Json\JsonResource;
+
 if (!function_exists(function: 'bhry98_response_success_with_data')) {
-    function bhry98_response_success_with_data(array $data = [], string $message = ''): \Illuminate\Http\JsonResponse
+    function bhry98_response_success_with_data(array|JsonResource $data = [], string $message = ''): \Illuminate\Http\JsonResponse
     {
         return response()->json(
             data: [

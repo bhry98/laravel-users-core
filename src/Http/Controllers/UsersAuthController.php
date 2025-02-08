@@ -37,7 +37,7 @@ class UsersAuthController extends Controller
         }
     }
 
-    function login(LoginRequest $request, UsersCoreUsersService $usersCoreServices)
+    function login(LoginRequest $request, UsersCoreUsersService $usersCoreServices): \Illuminate\Http\JsonResponse
     {
 
         try {

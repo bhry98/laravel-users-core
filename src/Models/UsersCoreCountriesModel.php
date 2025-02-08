@@ -19,13 +19,28 @@ class UsersCoreCountriesModel extends Model
         "local_name",
         "flag",
         "lang_key",
-        "timezone",
         "system_lang",
     ];
     protected $casts = [
         "name" => "string",
         "system_lang" => "boolean",
     ];
+
+    public function governorates(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(
+            related: UsersCoreGovernoratesModel::class,
+            foreignKey: "country_id",
+            localKey: "id");
+    }
+ public function cities(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(
+            related: UsersCoreCitiesModel::class,
+            foreignKey: "country_id",
+            localKey: "id");
+    }
+
     public function users(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(

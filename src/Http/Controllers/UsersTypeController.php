@@ -3,13 +3,13 @@
 namespace Bhry98\LaravelUsersCore\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Bhry98\LaravelUsersCore\Http\Requests\types\GetAllTypesRequest;
+use Bhry98\LaravelUsersCore\Http\Requests\types\GetAllCountriesRequest;
 use Bhry98\LaravelUsersCore\Http\Resources\TypeResource;
 use Bhry98\LaravelUsersCore\Services\UsersCoreTypesService;
 
 class UsersTypeController extends Controller
 {
-    function getAll(GetAllTypesRequest $request, UsersCoreTypesService $usersTypesService): \Illuminate\Http\JsonResponse
+    function getAll(GetAllCountriesRequest $request, UsersCoreTypesService $usersTypesService): \Illuminate\Http\JsonResponse
     {
         try {
             $typeData = $usersTypesService->getAllTypes($request->perPage,$request->searchForWord);
