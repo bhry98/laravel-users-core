@@ -1,7 +1,6 @@
 <?php
 
 namespace Bhry98\LaravelUsersCore\Http\Resources;
-include "../../Helpers/assets.php";
 use Bhry98\LaravelUsersCore\Http\Resources\Helpers\DateResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -20,7 +19,7 @@ class UserResource extends JsonResource
             "username" => $this->username,
             "email" => $this->email,
             "national_id" => $this->national_id,
-//            "birthdate" => $this->birthdate ? bhry98_date_formatted($this->birthdate) : null,
+            "birthdate" => $this->birthdate ? bhry98_date_formatted($this->birthdate) : null,
             "phone_number" => $this->phone_number,
             "country" => $this->Country ? CountryResource::make($this->Country) : null,
 //            "governorate_id" => $this->Type ? TypeResource::make($this->Type) : [],

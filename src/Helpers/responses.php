@@ -61,4 +61,18 @@ if (!function_exists(function: 'bhry98_response_internal_error')) {
         );
     }
 }
+if (!function_exists(function: 'bhry98_response_unauthenticated')) {
+    function bhry98_response_unauthenticated(string $message = ''): \Illuminate\Http\JsonResponse
+    {
+        return response()->json(
+            data: [
+                'success' => false,
+                'code' => 401,
+                'message' => $message,
+                'note' => __(key: "bhry98::responses.unauthenticated"),
+            ],
+            status: 401
+        );
+    }
+}
 

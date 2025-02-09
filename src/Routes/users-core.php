@@ -8,7 +8,7 @@ use Bhry98\LaravelUsersCore\Http\Controllers\{
 };
 use Illuminate\Support\Facades\Route;
 use Bhry98\LaravelUsersCore\Http\Middlewares\{
-    GlobalResponseLocale
+    GlobalResponseLocale,
 };
 
 Route::middleware([
@@ -33,6 +33,9 @@ Route::middleware([
                 ->name(name: 'login'); // without auth
             Route::post('/registration', [UsersAuthController::class, 'registration'])
                 ->name(name: 'registration'); // without auth
+            Route::get('/logout', [UsersAuthController::class, 'logout'])
+                ->name(name: 'logout')
+                ->middleware(['auth:sanctum']); // without auth
         });
 
     // types management
@@ -43,15 +46,14 @@ Route::middleware([
             Route::get('/', [UsersTypeController::class, 'getAll'])
                 ->name(name: 'all-types'); // without auth
         });
-
     // users management
-    Route::middleware(config(key: 'laravel-users-core.apis_middlewares', default: ['api','auth:sanctum']))
+    Route::middleware(config(key: 'laravel-users-core.apis_middlewares', default: ['api', 'auth:sanctum']))
         ->prefix(config(key: 'laravel-users-core.apis_prefix', default: 'users'))
         ->name(config(key: 'laravel-users-core.apis.name', default: 'bhry98-users-core') . ".users.")
         ->group(function () {
             Route::get('/my', [UsersCoreController::class, 'getMyProfile'])
                 ->name(name: 'my-profile'); // with auth
+            Route::put('/my', [UsersCoreController::class, 'updateMyProfile'])
+                ->name(name: 'update-my-profile'); // with auth
         });
-
-
 });

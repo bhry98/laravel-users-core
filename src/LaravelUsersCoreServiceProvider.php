@@ -5,10 +5,13 @@ namespace Bhry98\LaravelUsersCore;
 use Bhry98\LaravelUsersCore\Commands\Bhry98LaravelUsersCoreRunSeedCommand;
 use Bhry98\LaravelUsersCore\Commands\CountriesRunSeedCommand;
 use Bhry98\LaravelUsersCore\Commands\UsersTypeRunSeedCommand;
+use Bhry98\LaravelUsersCore\Exceptions\Handler;
 use Bhry98\LaravelUsersCore\Models\UsersCorePersonalAccessToken;
 use Bhry98\LaravelUsersCore\Models\UsersCoreSessionsModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreTypesModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Sanctum\Sanctum;
 
@@ -18,6 +21,7 @@ class LaravelUsersCoreServiceProvider extends ServiceProvider
     {
         // Merge package config
         $this->mergeConfigFrom(path: __DIR__ . '/Config/bhry98-users-core.php', key: 'bhry98-users-core');
+        $this->app->singleton(ExceptionHandler::class, Handler::class);
     }
 
     public function boot(): void
@@ -70,4 +74,5 @@ class LaravelUsersCoreServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(
             path: __DIR__ . "{$ds}Lang", namespace: "bhry98");
     }
+
 }

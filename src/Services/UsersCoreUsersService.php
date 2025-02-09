@@ -36,7 +36,7 @@ class UsersCoreUsersService
         return $tokenResult->plainTextToken;
     }
 
-    public function getAuthUser(): ?\Illuminate\Contracts\Auth\Authenticatable
+    static public function getAuthUser(): ?\Illuminate\Contracts\Auth\Authenticatable
     {
         return Auth::user();
     }
@@ -45,11 +45,19 @@ class UsersCoreUsersService
     {
         if (Auth::attempt(['username' => $data['username'], 'password' => $data['password']])) {
             $user = self::getAuthUser();
-            Log::info("User login successfully with id {$user->id}", ['user' => $user]);
+            Log::info("User login successfully with id {$user?->id}", ['user' => $user]);
             return self::loginViaUser($user);
         } else {
             Log::error("User login failed", ['credential' => $data]);
             return null;
         }
+    }
+
+    public function logout(): bool
+    {
+        Auth::user()?->currentAccessToken()->delete();
+        Auth::forgetUser();
+//        dd(auth()->check(),auth()->id());
+        return !auth()->check();
     }
 }

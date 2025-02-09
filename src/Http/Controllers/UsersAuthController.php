@@ -62,5 +62,22 @@ class UsersAuthController extends Controller
         }
     }
 
+    function logout(UsersCoreUsersService $usersCoreServices): \Illuminate\Http\JsonResponse
+    {
+        try {
+            if ($usersCoreServices->logout()) {
+                return bhry98_response_success_with_data(message: __("bhry98::responses.logout-success"));
+            } else {
+                return bhry98_response_success_without_data(message: __("bhry98::responses.logout-failed"));
+            }
+        } catch (\Exception $e) {
+            return bhry98_response_internal_error([
+                'error' => $e->getMessage(),
+                'code' => $e->getCode(),
+                'line' => $e->getLine(),
+            ]);
+        }
+    }
+
 
 }
