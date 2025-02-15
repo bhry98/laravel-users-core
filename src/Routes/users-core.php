@@ -33,6 +33,8 @@ Route::middleware([
                 ->name(name: 'login'); // without auth
             Route::post('/registration', [UsersAuthController::class, 'registration'])
                 ->name(name: 'registration'); // without auth
+            Route::post('/registrationByType', [UsersAuthController::class, 'registrationByType'])
+                ->name(name: 'registrationByType'); // without auth
             Route::get('/logout', [UsersAuthController::class, 'logout'])
                 ->name(name: 'logout')
                 ->middleware(['auth:sanctum']); // without auth

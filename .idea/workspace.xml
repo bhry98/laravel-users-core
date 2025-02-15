@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="add my profile ,logout routes">
+    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="fix some issues">
+      <change afterPath="$PROJECT_DIR$/src/Http/Requests/auth/RegistrationUserByTypeRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Http/Controllers/UsersAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/UsersAuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Http/Requests/auth/RegistrationUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Requests/auth/RegistrationUserRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/users-core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,8 +180,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PS-243.23654.168" />
-        <option value="bundled-php-predefined-a98d8de5180a-4c3855d0ab16-com.jetbrains.php.sharedIndexes-PS-243.23654.168" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PS-243.24978.50" />
+        <option value="bundled-php-predefined-a98d8de5180a-fbeb0b58ac0f-com.jetbrains.php.sharedIndexes-PS-243.24978.50" />
       </set>
     </attachedChunks>
   </component>
@@ -201,6 +208,7 @@
       <workItem from="1739033880483" duration="1879000" />
       <workItem from="1739089953844" duration="8901000" />
       <workItem from="1739210093000" duration="31000" />
+      <workItem from="1739619286056" duration="3675000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -482,7 +490,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739100823523</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fix some issues">
+      <option name="closed" value="true" />
+      <created>1739619988129</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1739619988129</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,6 +533,7 @@
     <MESSAGE value="finish registration flow for normal user type" />
     <MESSAGE value="add countries service with data" />
     <MESSAGE value="add my profile ,logout routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="add my profile ,logout routes" />
+    <MESSAGE value="fix some issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some issues" />
   </component>
 </project>

@@ -2,7 +2,7 @@
 return [
 
 
-    "auth_guards" => env(key: 'BHRY98_AUTH_GUARDS', default: "bhry98"),
+    "auth_guard" => env(key: 'BHRY98_AUTH_GUARD', default: "bhry98"),
     "date" => [
         'format' => 'd-m-Y  h:i A',
         'format_time' => 'H:i A',
@@ -11,10 +11,25 @@ return [
     ],
     /**
      * available login ways
-     * 1. username => login via username &password
-     *
+     * 1. username => login via username & password
+     * 2. phone => login via phone number & password
      */
-    "login_via" => "username",
+    "login_via" => "phone",
+    /**
+     * available overwrite validation for core user table
+     */
+    "validations" => [
+        "phone_number" => [
+            "required" => true,
+        ],
+        "national_id" => [
+            "required" => false,
+        ],
+        /**
+         * addon validations
+         */
+        "users_core_table" => [],
+    ]
 //
 //    /**
 //     * Auth Routes Configurations

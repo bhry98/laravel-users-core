@@ -5,17 +5,19 @@ namespace Bhry98\LaravelUsersCore\Http\Requests\auth;
 use Bhry98\LaravelUsersCore\Models\UsersCoreCitiesModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreCountriesModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreGovernoratesModel;
+use Bhry98\LaravelUsersCore\Models\UsersCoreTypesModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;
 use Illuminate\Foundation\Http\FormRequest;
 
 //use\HttpResponseException;
 
 
-class RegistrationUserRequest extends FormRequest
+class RegistrationUserByTypeRequest extends FormRequest
 {
     public function prepareForValidation()
     {
         $fixedData["country_id"] = $this->country;
+        $fixedData["type_code"] = $this->type;
         $fixedData["governorate_id"] = $this->governorate;
         $fixedData["city_id"] = $this->city;
         $fixedData["redirect_link"] = is_null($this->redirect_link) ? session("redirect_link") : $this->redirect_link;
@@ -34,6 +36,11 @@ class RegistrationUserRequest extends FormRequest
             "nullable",
             "uuid",
             "exists:" . UsersCoreCountriesModel::TABLE_NAME . ",id",
+        ];
+        $roles["type_code"] = [
+            "nullable",
+            "uuid",
+            "exists:" . UsersCoreTypesModel::TABLE_NAME . ",code",
         ];
         $roles["governorate_id"] = [
             "nullable",

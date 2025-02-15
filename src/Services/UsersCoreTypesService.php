@@ -28,6 +28,15 @@ class UsersCoreTypesService
         return UsersCoreTypesModel::where('default_name', self::NORMAL_USER['default_name'])->first();
     }
 
+    static function getByCode(string $code, array|null $relations = null)
+    {
+        $type = UsersCoreTypesModel::where('code', $code);
+        if (!is_null($relations)) {
+            $type->with($relations);
+        }
+        return $type->first();
+    }
+
     static function getAllTypes(int $perPage = 10, string|null $searchForWord = null)
     {
         $data = UsersCoreTypesModel::withCount('Users');
