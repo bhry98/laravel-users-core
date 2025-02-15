@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="add countries service with data">
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/Handler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Http/Requests/users/UserUpdateProfileRequest.php" afterDir="false" />
+    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="add my profile ,logout routes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Helpers/assets.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/assets.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Helpers/responses.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/responses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Controllers/UsersAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/UsersAuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Controllers/UsersCoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/UsersCoreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Resources/UserResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lang/en/responses.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lang/en/responses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LaravelUsersCoreServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LaravelUsersCoreServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes/users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/users-core.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +199,8 @@
       <workItem from="1738929045044" duration="11299000" />
       <workItem from="1739010835373" duration="5896000" />
       <workItem from="1739033880483" duration="1879000" />
-      <workItem from="1739089953844" duration="8195000" />
+      <workItem from="1739089953844" duration="8901000" />
+      <workItem from="1739210093000" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -485,7 +474,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739017302177</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="add my profile ,logout routes">
+      <option name="closed" value="true" />
+      <created>1739100823523</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1739100823523</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,6 +516,7 @@
     <MESSAGE value="." />
     <MESSAGE value="finish registration flow for normal user type" />
     <MESSAGE value="add countries service with data" />
-    <option name="LAST_COMMIT_MESSAGE" value="add countries service with data" />
+    <MESSAGE value="add my profile ,logout routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="add my profile ,logout routes" />
   </component>
 </project>
