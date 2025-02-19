@@ -88,7 +88,6 @@ class UsersCoreUsersService
     {
         Auth::user()?->currentAccessToken()->delete();
         Auth::forgetUser();
-//        dd(auth()->check(),auth()->id());
         return !auth()->check();
     }
 }

@@ -23,6 +23,8 @@ Route::middleware([
                 ->name(name: 'get-all-countries'); // without auth
             Route::get('/countries/{country_code}', [UsersLocationsController::class, 'getCountryDetails'])
                 ->name(name: 'get-country-details'); // without auth
+            Route::get('/countries/{country_code}/governorates', [UsersLocationsController::class, 'getAllGovernorates'])
+                ->name(name: 'get-all-governorates'); // without auth
         });
     // users auth
     Route::middleware(config(key: 'laravel-users-core.auth_apis.middleware', default: ['api']))

@@ -32,9 +32,16 @@ class UsersCoreGovernoratesModel extends Model
     public function users(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(
-            related: UsersCoreCountriesModel::class,
+            related: UsersCoreUsersModel::class,
             foreignKey: "governorate_id",
-            localKey: "country_id");
+            localKey: "id");
+    }
+    public function cities(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(
+            related: UsersCoreCitiesModel::class,
+            foreignKey: "governorate_id",
+            localKey: "id");
     }
 
     protected static function booted(): void

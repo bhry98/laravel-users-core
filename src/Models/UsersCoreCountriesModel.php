@@ -23,6 +23,7 @@ class UsersCoreCountriesModel extends Model
     ];
     protected $casts = [
         "name" => "string",
+        "code" => "string",
         "system_lang" => "boolean",
     ];
 
