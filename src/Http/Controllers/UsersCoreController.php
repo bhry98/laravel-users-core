@@ -4,17 +4,18 @@ namespace Bhry98\LaravelUsersCore\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Bhry98\LaravelUsersCore\Http\Requests\auth\LoginRequest;
+use Bhry98\LaravelUsersCore\Http\Requests\users\UserGetProfileRequest;
 use Bhry98\LaravelUsersCore\Http\Requests\users\UserUpdateProfileRequest;
 use Bhry98\LaravelUsersCore\Http\Resources\UserResource;
 use Bhry98\LaravelUsersCore\Services\UsersCoreUsersService;
 
 class UsersCoreController extends Controller
 {
-    function getMyProfile(UsersCoreUsersService $usersCoreServices): \Illuminate\Http\JsonResponse
+    function getMyProfile(UserGetProfileRequest $request,UsersCoreUsersService $usersCoreServices): \Illuminate\Http\JsonResponse
     {
 
         try {
-            $userData = $usersCoreServices->getAuthUser();
+            $userData = $usersCoreServices->getAuthUser($request->with);
             if (!$userData) return bhry98_response_success_without_data();
             return bhry98_response_success_with_data(UserResource::make($userData));
         } catch (\Exception $e) {

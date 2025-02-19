@@ -12,6 +12,7 @@ class UsersCoreUsersModel extends Authenticatable
 
     // start env
     const TABLE_NAME = "bhry98_users_core_users";
+    const RELATIONS = ["country","governorate","city"];
     // start table
     protected $table = self::TABLE_NAME;
     protected $fillable = [
@@ -56,6 +57,28 @@ class UsersCoreUsersModel extends Authenticatable
             related: UsersCoreTypesModel::class,
             foreignKey: "id",
             localKey: "type_id");
+    }
+
+    public function country(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(
+            related: UsersCoreCountriesModel::class,
+            foreignKey: "id",
+            localKey: "country_id");
+    }
+    public function governorate(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(
+            related: UsersCoreGovernoratesModel::class,
+            foreignKey: "id",
+            localKey: "governorate_id");
+    }
+    public function city(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(
+            related: UsersCoreGovernoratesModel::class,
+            foreignKey: "id",
+            localKey: "city_id");
     }
 
     protected static function booted(): void

@@ -28,6 +28,7 @@ class UsersCoreUsersService
             return null;
         }
     }
+
     public function registerByType(array $data)
     {
         // check if normal user exists
@@ -55,9 +56,14 @@ class UsersCoreUsersService
         return $tokenResult->plainTextToken;
     }
 
-    static public function getAuthUser(): ?\Illuminate\Contracts\Auth\Authenticatable
+    static public function getAuthUser(array|null $relations = null): ?\Illuminate\Contracts\Auth\Authenticatable
     {
-        return Auth::user();
+        $authUser = Auth::user();
+        $user = UsersCoreUsersModel::where('code', $authUser?->code);
+        if ($user && $relations) {
+            $user->with($relations);
+        }
+        return $user->first();
     }
 
     public function loginViaUsernameAndPassword(array $data): string|null

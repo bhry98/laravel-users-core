@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Http/Requests/locations/GetAllCitiesRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Http/Requests/locations/GetCityDetailsRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Http/Requests/locations/GetGovernorateDetailsRequest.php" afterDir="false" />
+    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="finish all locations endpoints">
+      <change afterPath="$PROJECT_DIR$/src/Http/Requests/users/UserGetProfileRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Controllers/UsersLocationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/UsersLocationsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Requests/locations/GetAllCountriesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Requests/locations/GetAllCountriesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Requests/locations/GetAllGovernoratesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Requests/locations/GetAllGovernoratesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Requests/locations/GetCountryDetailsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Requests/locations/GetCountryDetailsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Resources/CityResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Resources/CityResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Resources/CountryResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Resources/CountryResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Resources/GovernorateResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Resources/GovernorateResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreCitiesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreCitiesModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreCountriesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreCountriesModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreGovernoratesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreGovernoratesModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes/users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/users-core.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreLocationsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreLocationsService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Http/Controllers/UsersCoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/UsersCoreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Resources/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreUsersModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreUsersModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +211,7 @@
       <workItem from="1739701342570" duration="635000" />
       <workItem from="1739777405370" duration="7936000" />
       <workItem from="1739953841944" duration="3148000" />
-      <workItem from="1739980687890" duration="5194000" />
+      <workItem from="1739980687890" duration="6243000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -527,7 +517,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739974172975</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="finish all locations endpoints">
+      <option name="closed" value="true" />
+      <created>1739986081149</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1739986081149</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,6 +563,7 @@
     <MESSAGE value="fix some issues" />
     <MESSAGE value="add phone to options for login" />
     <MESSAGE value="add data to locations databases" />
-    <option name="LAST_COMMIT_MESSAGE" value="add data to locations databases" />
+    <MESSAGE value="finish all locations endpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish all locations endpoints" />
   </component>
 </project>
