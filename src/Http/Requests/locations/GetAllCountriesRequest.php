@@ -14,15 +14,16 @@ class GetAllCountriesRequest extends FormRequest
     public function prepareForValidation()
     {
         return $this->merge([
-            "Countries" => $this->Countries ?? 1,
+            "pageNumber" => $this->pageNumber ?? 1,
             "perPage" => $this->perPage ?? 10,
+            "searchForWord"=>in_array($this->searchForWord,['',null]) ?? null,
         ]);
     }
 
     public function rules(): array
     {
         return [
-            "Countries" => [
+            "pageNumber" => [
                 "nullable",
                 "numeric",
             ],

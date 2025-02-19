@@ -14,8 +14,8 @@ class CityResource extends JsonResource
             "code" => $this->code,
             "name" => $this->name,
             "local_name" => $this->local_name,
-            "country" => $this->country ? CountryResource::make($this->country) : null,
-            "governorate" => $this->governorate ? GovernorateResource::make($this->governorate) : null,
+            "country" => CountryResource::make($this->whenLoaded("country")),
+            "governorate" => GovernorateResource::make($this->whenLoaded("governorate")),
         ];
     }
 }

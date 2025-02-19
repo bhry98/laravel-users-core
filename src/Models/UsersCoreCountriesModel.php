@@ -9,6 +9,7 @@ class UsersCoreCountriesModel extends Model
 {
     // start env
     const TABLE_NAME = "bhry98_users_core_countries";
+    const RELATIONS = [];
     // start table
     protected $table = self::TABLE_NAME;
     public $timestamps = true;

@@ -2,12 +2,14 @@
 
 namespace Bhry98\LaravelUsersCore\Http\Requests\locations;
 
+use Bhry98\LaravelUsersCore\Models\UsersCoreCitiesModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreCountriesModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreGovernoratesModel;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
-class GetCountryDetailsRequest extends FormRequest
+class GetAllCitiesRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -17,16 +19,31 @@ class GetCountryDetailsRequest extends FormRequest
     public function prepareForValidation()
     {
         return $this->merge([
+            "pageNumber" => $this->pageNumber ?? 1,
+            "perPage" => $this->perPage ?? 10,
             "with" => $this->with ? explode(separator: ',', string: $this->with) : null,
-            "country_code" => $this->country_code
+            "governorate_code" => $this->governorate_code,
+
         ]);
     }
 
     public function rules(): array
     {
-
         return [
-
+            "pageNumber" => [
+                "nullable",
+                "numeric",
+            ],
+            "perPage" => [
+                "nullable",
+                "numeric",
+                "between:5,50",
+            ],
+            "searchForWord" => [
+                "nullable",
+                "string",
+                "between:1,50",
+            ],
             "with" => [
                 "nullable",
                 "array",
@@ -34,19 +51,23 @@ class GetCountryDetailsRequest extends FormRequest
             ],
             "with.*" => [
                 "nullable",
-                Rule::in(values: UsersCoreCountriesModel::RELATIONS),
+                Rule::in(values: UsersCoreCitiesModel::RELATIONS),
             ],
-            "country_code" => [
+            "governorate_code" => [
                 "required",
                 "string",
-                "exists:" . UsersCoreCountriesModel::TABLE_NAME . ",code",
+                "exists:" . UsersCoreGovernoratesModel::TABLE_NAME . ",code",
             ]
         ];
     }
 
     public function attributes(): array
     {
-        return [];
+        $attributes = [];
+        foreach ($this->with ?? [] as $withKey => $with) {
+            $attributes["with.$withKey"] = "$with";
+        }
+        return $attributes;
     }
 
     public function messages(): array
@@ -60,7 +81,8 @@ class GetCountryDetailsRequest extends FormRequest
             throw new \Illuminate\Http\Exceptions\HttpResponseException(
                 bhry98_response_validation_error(
                     data: (new \Illuminate\Validation\ValidationException($validator))->errors(),
-                    message: (new \Illuminate\Validation\ValidationException($validator))->getMessage()
+                    message: (new \Illuminate\Validation\ValidationException($validator))->getMessage(),
+
                 )
             );
         }

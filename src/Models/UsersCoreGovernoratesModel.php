@@ -9,6 +9,9 @@ class UsersCoreGovernoratesModel extends Model
 {
     // start env
     const TABLE_NAME = "bhry98_users_core_governorates";
+    const RELATIONS = [
+        "country",
+    ];
     // start table
     protected $table = self::TABLE_NAME;
     public $timestamps = true;

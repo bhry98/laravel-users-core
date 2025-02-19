@@ -2,7 +2,11 @@
 
 namespace Bhry98\LaravelUsersCore\Http\Requests\locations;
 
+use Bhry98\LaravelUsersCore\Models\UsersCoreCountriesModel;
+use Bhry98\LaravelUsersCore\Models\UsersCoreGovernoratesModel;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class GetAllGovernoratesRequest extends FormRequest
 {
@@ -10,19 +14,21 @@ class GetAllGovernoratesRequest extends FormRequest
     {
         return true;
     }
+
     public function prepareForValidation()
     {
         return $this->merge([
-            "Governorates" => $this->Governorates ?? 1,
+            "pageNumber" => $this->pageNumber ?? 1,
             "perPage" => $this->perPage ?? 10,
-//            "with" => ! ? json_encode($this->with, true) : null,
+            "with" => $this->with ? explode(separator: ',', string: $this->with) : null,
+            "country_code" => $this->country_code,
         ]);
     }
 
     public function rules(): array
     {
         return [
-            "Governorates" => [
+            "pageNumber" => [
                 "nullable",
                 "numeric",
             ],
@@ -40,13 +46,26 @@ class GetAllGovernoratesRequest extends FormRequest
                 "nullable",
                 "array",
                 "between:1,5",
+            ],
+            "with.*" => [
+                "nullable",
+                Rule::in(values: UsersCoreGovernoratesModel::RELATIONS),
+            ],
+            "country_code" => [
+                "required",
+                "string",
+                "exists:" . UsersCoreCountriesModel::TABLE_NAME . ",code",
             ]
         ];
     }
 
     public function attributes(): array
     {
-        return [];
+        $attributes = [];
+        foreach ($this->with ?? [] as $withKey => $with) {
+            $attributes["with.$withKey"] = "$with";
+        }
+        return $attributes;
     }
 
     public function messages(): array
@@ -60,7 +79,8 @@ class GetAllGovernoratesRequest extends FormRequest
             throw new \Illuminate\Http\Exceptions\HttpResponseException(
                 bhry98_response_validation_error(
                     data: (new \Illuminate\Validation\ValidationException($validator))->errors(),
-                    message: (new \Illuminate\Validation\ValidationException($validator))->getMessage()
+                    message: (new \Illuminate\Validation\ValidationException($validator))->getMessage(),
+
                 )
             );
         }

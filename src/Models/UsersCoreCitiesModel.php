@@ -9,6 +9,7 @@ class UsersCoreCitiesModel extends Model
 {
     // start env
     const TABLE_NAME = "bhry98_users_core_cities";
+    const RELATIONS = ["country", "governorate"];
     // start table
     protected $table = self::TABLE_NAME;
     public $timestamps = true;
@@ -30,6 +31,7 @@ class UsersCoreCitiesModel extends Model
             foreignKey: "id",
             localKey: "country_id");
     }
+
     public function governorate(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(
@@ -37,10 +39,11 @@ class UsersCoreCitiesModel extends Model
             foreignKey: "id",
             localKey: "governorate_id");
     }
+
     public function users(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(
-            related: UsersCoreCountriesModel::class,
+            related: UsersCoreUsersModel::class,
             foreignKey: "governorate_id",
             localKey: "country_id");
     }

@@ -10,13 +10,12 @@ class GovernorateResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-//            'reference_id' => $this->id,
             "code" => $this->code,
             "name" => $this->name,
             "local_name" => $this->local_name,
             "total_cities" => $this->cities_count,
-//            "country" => $this->when(in_array("countries", $request->with)) ? ($this->country ? CountryResource::make($this->country) : null) : null,
-            "country" => CountryResource::make($this->whenLoaded('country')),
+            "total_users" => $this->users_count,
+            "country" => CountryResource::make($this->whenLoaded(relationship: 'country')),
         ];
     }
 }

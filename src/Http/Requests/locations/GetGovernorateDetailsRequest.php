@@ -7,7 +7,7 @@ use Bhry98\LaravelUsersCore\Models\UsersCoreGovernoratesModel;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class GetCountryDetailsRequest extends FormRequest
+class GetGovernorateDetailsRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -18,7 +18,7 @@ class GetCountryDetailsRequest extends FormRequest
     {
         return $this->merge([
             "with" => $this->with ? explode(separator: ',', string: $this->with) : null,
-            "country_code" => $this->country_code
+            "governorate_code" => $this->governorate_code
         ]);
     }
 
@@ -26,7 +26,6 @@ class GetCountryDetailsRequest extends FormRequest
     {
 
         return [
-
             "with" => [
                 "nullable",
                 "array",
@@ -34,19 +33,23 @@ class GetCountryDetailsRequest extends FormRequest
             ],
             "with.*" => [
                 "nullable",
-                Rule::in(values: UsersCoreCountriesModel::RELATIONS),
+                Rule::in(values: UsersCoreGovernoratesModel::RELATIONS),
             ],
-            "country_code" => [
+            "governorate_code" => [
                 "required",
                 "string",
-                "exists:" . UsersCoreCountriesModel::TABLE_NAME . ",code",
+                "exists:" . UsersCoreGovernoratesModel::TABLE_NAME . ",code",
             ]
         ];
     }
 
     public function attributes(): array
     {
-        return [];
+        $attributes = [];
+        foreach ($this->with ?? [] as $withKey => $with) {
+            $attributes["with.$withKey"] = "$with";
+        }
+        return $attributes;
     }
 
     public function messages(): array
