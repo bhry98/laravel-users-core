@@ -4,6 +4,7 @@ namespace Bhry98\LaravelUsersCore\Services;
 
 use Bhry98\LaravelUsersCore\Models\UsersCoreExtraColumnsModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;
+use Bhry98\LaravelUsersCore\Models\UsersCoreUsersVerifyModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
@@ -25,6 +26,24 @@ class UsersCoreUsersService
         } else {
             // if added successfully add log [error] and return user
             Log::error("User registered field");
+            return null;
+        }
+    }
+
+    public function createNewVerifyCode(UsersCoreUsersModel $user)
+    {
+        $record = UsersCoreUsersVerifyModel::create([
+            "verify_code" => rand(126457, 968748),
+            "user_id" => $user?->id,
+            "expired_at" => now(config(key: 'app.timezone'))->addMinutes(value: 10),
+        ]);
+        if ($record) {
+            // if added successfully add log [info] and return user
+            Log::info(message: "User {$user->code} request a new verify code successfuly with id {$record->id}", context: ['user' => $user, 'record' => $record]);
+            return $record;
+        } else {
+            // if added successfully add log [error] and return user
+            Log::error(message: "User {$user->code} request a new verify code field");
             return null;
         }
     }
