@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="finish get my profile">
-      <change afterPath="$PROJECT_DIR$/src/Lang/ar/users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lang/en/users.php" afterDir="false" />
+    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="finish update my profile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Controllers/UsersCoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/UsersCoreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Controllers/UsersLocationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/UsersLocationsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Requests/auth/RegistrationUserByTypeRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Requests/auth/RegistrationUserByTypeRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Requests/auth/RegistrationUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Requests/auth/RegistrationUserRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Requests/locations/GetAllCountriesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Requests/locations/GetAllCountriesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Requests/users/UserUpdateProfileRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Requests/users/UserUpdateProfileRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LaravelUsersCoreServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LaravelUsersCoreServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes/users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/users-core.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreUsersService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,20 +130,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/bhry98/Projects/FL/Laravel-Core-Users-Package/src/Lang/ar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bhry98/Projects/FL/Laravel-Core-Users-Package/src/Lang/ar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Lang/ar" />
@@ -222,7 +210,8 @@
       <workItem from="1740223739618" duration="1378000" />
       <workItem from="1740225855495" duration="3126000" />
       <workItem from="1740300387735" duration="2877000" />
-      <workItem from="1740306180186" duration="12024000" />
+      <workItem from="1740306180186" duration="13075000" />
+      <workItem from="1740322496055" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -544,7 +533,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739987061928</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="finish update my profile">
+      <option name="closed" value="true" />
+      <created>1740320186276</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1740320186276</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,6 +581,7 @@
     <MESSAGE value="add data to locations databases" />
     <MESSAGE value="finish all locations endpoints" />
     <MESSAGE value="finish get my profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish get my profile" />
+    <MESSAGE value="finish update my profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish update my profile" />
   </component>
 </project>

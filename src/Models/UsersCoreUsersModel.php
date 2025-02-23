@@ -2,13 +2,14 @@
 
 namespace Bhry98\LaravelUsersCore\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
 
 class UsersCoreUsersModel extends Authenticatable
 {
-    use HasApiTokens;
+    use HasApiTokens, SoftDeletes;
 
     // start env
     const TABLE_NAME = "bhry98_users_core_users";
