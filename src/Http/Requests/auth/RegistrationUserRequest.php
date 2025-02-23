@@ -20,9 +20,9 @@ class RegistrationUserRequest extends FormRequest
         $fixedData["city_id"] = $this->city;
         $fixedData["redirect_link"] = is_null($this->redirect_link) ? session("redirect_link") : $this->redirect_link;
         $fixedData["display_name"] = is_null($this->display_name) ? $this->first_name . " " . $this->last_name : $this->display_name;
+        $fixedData["username"] = is_null($this->username) ? $this->email: $this->username;
         return $this->merge($fixedData);
     }
-
     public function rules(): array
     {
         $roles["username"] = [

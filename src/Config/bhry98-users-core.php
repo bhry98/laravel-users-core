@@ -3,6 +3,7 @@ return [
 
 
     "auth_guard" => env(key: 'BHRY98_AUTH_GUARD', default: "bhry98"),
+    "user_model" => \Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel::class,
     "date" => [
         'format' => 'd-m-Y  h:i A',
         'format_time' => 'H:i A',
@@ -29,17 +30,33 @@ return [
          * addon validations
          */
         "users_core_table" => [],
-    ]
-//
-//    /**
-//     * Auth Routes Configurations
-//     */
-//    "auth_apis" => [
-//        "prefix" => "auth",
-//        "middleware" => ["web"],
-//        "name" => "auth",
-//    ],
-//
+    ],
+
+    /**
+     * NON Auth Routes Configurations
+     */
+    "auth_apis" => [
+        "prefix" => "auth",
+        "middleware" => ["api"],
+        "name" => "",
+    ],
+    /**
+     * Helpers Routes Configurations [countries,cities, ...etc]
+     */
+    "helpers_apis" => [
+        "prefix" => "helpers",
+        "middleware" => ["api"],
+        "name" => "",
+    ],
+    /**
+     * Users management Routes Configurations
+     */
+    "users_apis" => [
+        "prefix" => "users",
+        "middleware" => ["api", "auth:sanctum"],
+        "name" => "",
+    ],
+
 //
 //    'users_table_name' => 'users',
 //    'api_prefix' => "users",

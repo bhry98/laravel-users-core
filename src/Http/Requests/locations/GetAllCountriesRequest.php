@@ -16,7 +16,7 @@ class GetAllCountriesRequest extends FormRequest
         return $this->merge([
             "pageNumber" => $this->pageNumber ?? 1,
             "perPage" => $this->perPage ?? 10,
-            "searchForWord"=>in_array($this->searchForWord,['',null]) ?? null,
+//            "searchForWord" => in_array($this->searchForWord, ['', null]) ?? '',
         ]);
     }
 

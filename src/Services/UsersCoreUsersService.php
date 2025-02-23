@@ -100,6 +100,7 @@ class UsersCoreUsersService
     public function loginViaPhoneAndPassword(array $data): string|null
     {
         if (Auth::attempt(['phone_number' => $data['phone_number'], 'password' => $data['password']])) {
+
             $user = self::getAuthUser();
             Log::info("User login successfully with id {$user?->id}", ['user' => $user]);
             return self::loginViaUser($user);
@@ -114,5 +115,19 @@ class UsersCoreUsersService
         Auth::user()?->currentAccessToken()->delete();
         Auth::forgetUser();
         return !auth()->check();
+    }
+
+    public function updateProfile(array $data): bool
+    {
+        $user = self::getAuthUser();
+        $update = $user->update($data);
+        if ($update) {
+            // if added successfully add log [info] and return user
+            Log::info("User updated his profile successfully with id {$user->id}", ['user' => $user, "update" => $data]);
+        } else {
+            // if added successfully add log [error] and return user
+            Log::error("User updated his profile field", ['user' => $user, "update" => $data]);
+        }
+        return $update;
     }
 }

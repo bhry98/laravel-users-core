@@ -2,12 +2,14 @@
 
 namespace Bhry98\LaravelUsersCore\Http\Requests\users;
 
+use Bhry98\LaravelUsersCore\Http\Resources\UserResource;
 use Bhry98\LaravelUsersCore\Models\UsersCoreCitiesModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreCountriesModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreGovernoratesModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;
 use Bhry98\LaravelUsersCore\Services\UsersCoreUsersService;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
 
 //use\HttpResponseException;
 
@@ -16,21 +18,21 @@ class UserUpdateProfileRequest extends FormRequest
 {
     public function prepareForValidation()
     {
-        $fixedData["country_id"] = $this->country;
-        $fixedData["governorate_id"] = $this->governorate;
-        $fixedData["city_id"] = $this->city;
-        $fixedData["redirect_link"] = is_null($this->redirect_link) ? session("redirect_link") : $this->redirect_link;
-        $fixedData["display_name"] = is_null($this->display_name) ? $this->first_name . " " . $this->last_name : $this->display_name;
+        $user = request()->user();
+        $fixedData["country_id"] = !$this->country || is_null($this->country) ? $user->country_id : $this->country;
+        $fixedData["governorate_id"] = !$this->governorate || is_null($this->governorate) ? $user->governorate_id : $this->governorate;
+        $fixedData["city_id"] = !$this->city || is_null($this->city) ? $user->city_id : $this->city;
+        $fixedData["username"] = !$this->username || is_null($this->username) ? $user->username : $this->username;
         return $this->merge($fixedData);
     }
 
     public function rules(): array
     {
-        $user = UsersCoreUsersService::getAuthUser();
+        $user = request()->user();
         $roles["username"] = [
-            "required",
+            "nullable",
             "string",
-            "exists:" . UsersCoreUsersModel::TABLE_NAME . ",username," . $user?->id,
+            "unique:" . UsersCoreUsersModel::TABLE_NAME . ",username," . $user->id,
         ];
         $roles["country_id"] = [
             "nullable",
@@ -48,18 +50,9 @@ class UserUpdateProfileRequest extends FormRequest
             "exists:" . UsersCoreCitiesModel::TABLE_NAME . ",id",
         ];
         $roles["email"] = [
-            "required",
+            "nullable",
             "email",
-            "unique:" . UsersCoreUsersModel::TABLE_NAME . ",email",
-        ];
-        $roles["password"] = [
-            "required",
-            "string",
-            "between:8,50",
-            "confirmed",
-        ];
-        $roles["redirect_link"] = [
-            "nullable"
+            "unique:" . UsersCoreUsersModel::TABLE_NAME . ",email," . $user->id,
         ];
         $roles["display_name"] = [
             "nullable",
@@ -67,12 +60,12 @@ class UserUpdateProfileRequest extends FormRequest
             "max:50",
         ];
         $roles["first_name"] = [
-            "required",
+            "nullable",
             "string",
             "max:50",
         ];
         $roles["last_name"] = [
-            "required",
+            "nullable",
             "string",
             "max:50",
         ];
@@ -85,13 +78,13 @@ class UserUpdateProfileRequest extends FormRequest
             "nullable",
             "numeric",
             "digits:14",
-            "unique:" . UsersCoreUsersModel::TABLE_NAME . ",national_id",
+            "unique:" . UsersCoreUsersModel::TABLE_NAME . ",national_id," . $user->id,
         ];
         $roles["phone_number"] = [
             "nullable",
             "numeric",
             "digits:11",
-            "unique:" . UsersCoreUsersModel::TABLE_NAME . ",phone_number",
+            "unique:" . UsersCoreUsersModel::TABLE_NAME . ",phone_number," . $user->id,
 
         ];
         return $roles;

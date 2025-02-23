@@ -14,28 +14,38 @@ use Bhry98\LaravelUsersCore\Http\Middlewares\{
 Route::middleware([
     GlobalResponseLocale::class
 ])->group(function () {
-    // locations
-    Route::middleware(config(key: 'laravel-users-core.auth_apis.middleware', default: ['api']))
-        ->prefix(config(key: 'laravel-users-core.auth_apis.prefix', default: 'locations'))
-        ->name(config(key: 'laravel-users-core.auth_apis.name', default: 'bhry98-users-core') . ".locations.")
+    // helpers
+    Route::middleware(config(key: 'bhry98-users-core.helpers_apis.middleware', default: ['api']))
+        ->prefix(config(key: 'bhry98-users-core.helpers_apis.prefix', default: 'helpers'))
+        ->name(config(key: 'bhry98-users-core.helpers_apis.name', default: 'bhry98-users-core') . ".helpers.")
         ->group(function () {
-            Route::get('/countries', [UsersLocationsController::class, 'getAllCountries'])
-                ->name(name: 'get-all-countries'); // without auth
-            Route::get('/countries/{country_code}', [UsersLocationsController::class, 'getCountryDetails'])
-                ->name(name: 'get-country-details'); // without auth
-            Route::get('/countries/{country_code}/governorates', [UsersLocationsController::class, 'getAllGovernorates'])
-                ->name(name: 'get-all-governorates'); // without auth
-            Route::get('/countries/{country_code}/governorates/{governorate_code}', [UsersLocationsController::class, 'getGovernorateDetails'])
-                ->name(name: 'get-governorate-details'); // without auth
-            Route::get('/countries/{country_code}/governorates/{governorate_code}/cities', [UsersLocationsController::class, 'getAllCities'])
-                ->name(name: 'get-all-cities'); // without auth
-            Route::get('/countries/{country_code}/governorates/{governorate_code}/cities/{city_code}', [UsersLocationsController::class, 'getCityDetails'])
-                ->name(name: 'get-city-details'); // without auth
+            Route::name("locations.")
+                ->prefix("locations")
+                ->group(function () {
+                    Route::get('/countries', [UsersLocationsController::class, 'getAllCountries'])
+                        ->name(name: 'get-all-countries'); // without auth
+                    Route::get('/countries/{country_code}', [UsersLocationsController::class, 'getCountryDetails'])
+                        ->name(name: 'get-country-details'); // without auth
+                    Route::get('/countries/{country_code}/governorates', [UsersLocationsController::class, 'getAllGovernorates'])
+                        ->name(name: 'get-all-governorates'); // without auth
+                    Route::get('/countries/{country_code}/governorates/{governorate_code}', [UsersLocationsController::class, 'getGovernorateDetails'])
+                        ->name(name: 'get-governorate-details'); // without auth
+                    Route::get('/countries/{country_code}/governorates/{governorate_code}/cities', [UsersLocationsController::class, 'getAllCities'])
+                        ->name(name: 'get-all-cities'); // without auth
+                    Route::get('/countries/{country_code}/governorates/{governorate_code}/cities/{city_code}', [UsersLocationsController::class, 'getCityDetails'])
+                        ->name(name: 'get-city-details'); // without auth
+                });
+            Route::name("types.")
+                ->prefix("types")
+                ->group(function () {
+                    Route::get('/', [UsersTypeController::class, 'getAll'])
+                        ->name(name: 'all-types'); // without auth
+                });
         });
-    // users auth
-    Route::middleware(config(key: 'laravel-users-core.auth_apis.middleware', default: ['api']))
-        ->prefix(config(key: 'laravel-users-core.auth_apis.prefix', default: 'auth'))
-        ->name(config(key: 'laravel-users-core.auth_apis.name', default: 'bhry98-users-core') . ".auth.")
+    // auth
+    Route::middleware(config(key: 'bhry98-users-core.auth_apis.middleware', default: ['api']))
+        ->prefix(config(key: 'bhry98-users-core.auth_apis.prefix', default: 'auth'))
+        ->name(config(key: 'bhry98-users-core.auth_apis.name', default: 'bhry98-users-core') . ".auth.")
         ->group(function () {
             Route::post('/login', [UsersAuthController::class, 'login'])
                 ->name(name: 'login'); // without auth
@@ -48,18 +58,14 @@ Route::middleware([
                 ->middleware(['auth:sanctum']); // without auth
         });
 
-    // types management
-    Route::middleware(config(key: 'laravel-users-core.apis_middlewares', default: ['api']))
-        ->prefix(config(key: 'laravel-users-core.apis_prefix', default: 'types'))
-        ->name(config(key: 'laravel-users-core.apis.name', default: 'bhry98-users-core') . ".types.")
-        ->group(function () {
-            Route::get('/', [UsersTypeController::class, 'getAll'])
-                ->name(name: 'all-types'); // without auth
-        });
+
+
+
+
     // users management
-    Route::middleware(config(key: 'laravel-users-core.apis_middlewares', default: ['api', 'auth:sanctum']))
-        ->prefix(config(key: 'laravel-users-core.apis_prefix', default: 'users'))
-        ->name(config(key: 'laravel-users-core.apis.name', default: 'bhry98-users-core') . ".users.")
+    Route::middleware(config(key: 'bhry98-users-core.users_apis.middleware', default: ['api', 'auth:sanctum']))
+        ->prefix(config(key: 'bhry98-users-core.users_apis.prefix', default: 'users'))
+        ->name(config(key: 'bhry98-users-core.users_apis.name', default: 'bhry98-users-core') . ".users.")
         ->group(function () {
             Route::get('/my', [UsersCoreController::class, 'getMyProfile'])
                 ->name(name: 'my-profile'); // with auth
