@@ -3,10 +3,12 @@
 namespace Bhry98\LaravelUsersCore\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
 class UsersCoreTypesModel extends Model
 {
+    use SoftDeletes;
     // start env
     const TABLE_NAME = "bhry98_users_core_types";
     // start table

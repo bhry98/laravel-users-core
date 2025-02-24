@@ -3,10 +3,13 @@
 namespace Bhry98\LaravelUsersCore\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
 class UsersCoreExtraColumnsModel extends Model
 {
+    use SoftDeletes;
+
     // start env
     const TABLE_NAME = "bhry98_users_core_extra_columns";
     // start table
