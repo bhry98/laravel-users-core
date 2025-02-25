@@ -56,12 +56,20 @@ return [
         "middleware" => ["api", "auth:sanctum"],
         "name" => "",
     ],
-
-//
-//    'users_table_name' => 'users',
-//    'api_prefix' => "users",
-//    'api_middlewares' => [
-//        'api'
-//    ],
-//    "api_redirect_key" => "link"
+    /**
+     * Addon types to default types
+     */
+    "types_to_add" => [
+        /**
+         * [
+         *  "default_name" => "Normal User", // default name to get if accept-language value not valid system lang key
+         *  "can_delete" => true, // if false thin no one can delete this type [soft delete only]
+         *  "api_access" => true, // if false this type don't return in any api response
+         *  "names" => [ // for localization by "lang_system_key"=>"value"
+         *  "ar" => "مستخدم عادي",
+         *  "en" => "Normal User",
+         *  ],
+         * ]
+         */
+    ]
 ];

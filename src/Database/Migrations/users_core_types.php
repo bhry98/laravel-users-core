@@ -17,6 +17,8 @@ return new class extends Migration {
                 $table->uuid(column: 'code')->unique();
                 $table->string(column: 'default_name', length: 50);
                 $table->json(column: 'names')->nullable();
+                $table->boolean(column: 'api_access')->default(value: true);
+                $table->boolean(column: 'can_delete')->default(value: false);
                 $table->softDeletes();
                 $table->timestamps();
             });

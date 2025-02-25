@@ -18,10 +18,14 @@ class UsersCoreTypesModel extends Model
         "code",
         "default_name",
         "names",
+        "api_access",
+        "can_delete",
     ];
     protected $casts = [
         "default_name" => "string",
         "names" => "array",
+        "api_access" => "boolean",
+        "can_delete" => "boolean",
     ];
 
     public  function Name($local)

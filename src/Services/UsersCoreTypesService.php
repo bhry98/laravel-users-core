@@ -7,15 +7,14 @@ use Bhry98\LaravelUsersCore\Models\UsersCoreTypesModel;
 class UsersCoreTypesService
 {
     const ADMIN_USER = [
-        "code" => "admin-user",
         "default_name" => "Admin User",
         "names" => [
             "ar" => "مستخدم مسؤول",
             "en" => "Admin User",
-        ]
+        ],
+        "api_access"
     ];
     const NORMAL_USER = [
-        "code" => "normal-user",
         "default_name" => "Normal User",
         "names" => [
             "ar" => "مستخدم عادي",

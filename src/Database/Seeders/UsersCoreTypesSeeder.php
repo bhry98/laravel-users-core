@@ -15,5 +15,8 @@ class UsersCoreTypesSeeder extends Seeder
     {
         UsersCoreTypesModel::create(UsersCoreTypesService::NORMAL_USER);
         UsersCoreTypesModel::create(UsersCoreTypesService::ADMIN_USER);
+        foreach (config(key: "bhry98-users-core.types_to_add", default: []) ?? [] as $type) {
+            UsersCoreTypesModel::create($type);
+        }
     }
 }
