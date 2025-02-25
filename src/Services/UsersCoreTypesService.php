@@ -32,7 +32,7 @@ class UsersCoreTypesService
 
     static function getByCode(string $code, array|null $relations = null)
     {
-        $type = UsersCoreTypesModel::where('code', $code);
+        $type = UsersCoreTypesModel::where('api_access', false)->where('code', $code);
         if (!is_null($relations)) {
             $type->with($relations);
         }
@@ -41,7 +41,7 @@ class UsersCoreTypesService
 
     static function getAllTypes(int $perPage = 10, string|null $searchForWord = null)
     {
-        $data = UsersCoreTypesModel::withCount('Users');
+        $data = UsersCoreTypesModel::where('api_access', false)->withCount('Users');
         if (!empty($searchForWord)) {
             $data->where('default_name', 'like', '%' . $searchForWord . '%');
         }
