@@ -36,7 +36,7 @@ class RegistrationUserByTypeRequest extends FormRequest
         $roles["country_id"] = [
             "nullable",
             "uuid",
-            "exists:" . UsersCoreCountriesModel::TABLE_NAME . ",id",
+            "exists:" . UsersCoreCountriesModel::TABLE_NAME . ",code",
         ];
         $roles["type_code"] = [
             "nullable",
@@ -46,12 +46,12 @@ class RegistrationUserByTypeRequest extends FormRequest
         $roles["governorate_id"] = [
             "nullable",
             "uuid",
-            "exists:" . UsersCoreGovernoratesModel::TABLE_NAME . ",id",
+            "exists:" . UsersCoreGovernoratesModel::TABLE_NAME . ",code",
         ];
         $roles["city_id"] = [
             "nullable",
             "uuid",
-            "exists:" . UsersCoreCitiesModel::TABLE_NAME . ",id",
+            "exists:" . UsersCoreCitiesModel::TABLE_NAME . ",code",
         ];
         $roles["email"] = [
             "required",
