@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="add SoftDeletes to Models">
+    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="add types_to_add in config to add type before migrate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/Migrations/users_core_types.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Migrations/users_core_types.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/Seeders/UsersCoreTypesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Seeders/UsersCoreTypesSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/UsersCoreTypesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersCoreTypesModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,7 +215,7 @@
       <workItem from="1740322496055" duration="8000" />
       <workItem from="1740326463252" duration="690000" />
       <workItem from="1740397610793" duration="1226000" />
-      <workItem from="1740476881105" duration="1514000" />
+      <workItem from="1740476881105" duration="3067000" />
     </task>
     <task id="LOCAL-00001" summary="test init">
       <option name="closed" value="true" />
@@ -573,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740397697474</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="add types_to_add in config to add type before migrate">
+      <option name="closed" value="true" />
+      <created>1740483480089</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1740483480089</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +595,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test init" />
     <MESSAGE value="add &quot;prefer-stable&quot;: true in composer.json" />
     <MESSAGE value="add session migrate and model" />
     <MESSAGE value="fix composer.json" />
@@ -616,6 +619,7 @@
     <MESSAGE value="finish update my profile" />
     <MESSAGE value="add SoftDeletes to UsersCoreUsersModel.php" />
     <MESSAGE value="add SoftDeletes to Models" />
-    <option name="LAST_COMMIT_MESSAGE" value="add SoftDeletes to Models" />
+    <MESSAGE value="add types_to_add in config to add type before migrate" />
+    <option name="LAST_COMMIT_MESSAGE" value="add types_to_add in config to add type before migrate" />
   </component>
 </project>

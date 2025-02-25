@@ -12,7 +12,8 @@ class UsersCoreTypesService
             "ar" => "مستخدم مسؤول",
             "en" => "Admin User",
         ],
-        "api_access"
+        "api_access" => false,
+        "can_delete" => false
     ];
     const NORMAL_USER = [
         "default_name" => "Normal User",
@@ -20,6 +21,8 @@ class UsersCoreTypesService
             "ar" => "مستخدم عادي",
             "en" => "Normal User",
         ],
+        "api_access" => true,
+        "can_delete" => true
     ];
 
     static function getNormalUserType()
