@@ -59,6 +59,9 @@ class UsersCoreUsersService
         throw_if(!$userType, "No user type found");
         // add normal user in database
         $data['type_id'] = $userType->id;
+        $data['country_id'] = UsersCoreLocationsService::getCountryDetails($data['country_id'])?->id;
+        $data['governorate_id'] = UsersCoreLocationsService::getGovernorateDetails($data['governorate_id'])?->id;
+        $data['city_id'] = UsersCoreLocationsService::getCityDetails($data['city_id'])?->id;
         $user = UsersCoreUsersModel::create($data);
         if ($user) {
             // if added successfully add log [info] and return user
