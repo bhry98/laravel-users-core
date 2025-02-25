@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="...">
       <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -215,15 +214,7 @@
       <workItem from="1740322496055" duration="8000" />
       <workItem from="1740326463252" duration="690000" />
       <workItem from="1740397610793" duration="1226000" />
-      <workItem from="1740476881105" duration="6551000" />
-    </task>
-    <task id="LOCAL-00001" summary="test init">
-      <option name="closed" value="true" />
-      <created>1738701882073</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1738701882073</updated>
+      <workItem from="1740476881105" duration="6693000" />
     </task>
     <task id="LOCAL-00002" summary="add &quot;prefer-stable&quot;: true in composer.json">
       <option name="closed" value="true" />
@@ -609,7 +600,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740485983567</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="...">
+      <option name="closed" value="true" />
+      <created>1740489699261</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1740489699261</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,7 +626,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update UsersCoreSessionsModel.php last_activity casts to integer" />
     <MESSAGE value="update users_core_sessions.php" />
     <MESSAGE value="update minimum-stability in composer.json to stable" />
     <MESSAGE value="testOutput" />
@@ -652,6 +650,7 @@
     <MESSAGE value="fix request validation for locations" />
     <MESSAGE value="update UsersCoreUsersService.php" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
