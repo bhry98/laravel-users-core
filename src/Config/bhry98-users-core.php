@@ -17,6 +17,11 @@ return [
      */
     "login_via" => "phone",
     /**
+     * available reset password ways
+     * 1. email => send otp to email
+     */
+    "reset_password_via" => "email",
+    /**
      * available overwrite validation for core user table
      */
     "validations" => [

@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="...">
-      <change beforePath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UsersCoreTypesService.php" afterDir="false" />
+    <list default="true" id="b103e13a-8de5-454c-a2de-faed361348bb" name="Changes" comment="..">
+      <change afterPath="$PROJECT_DIR$/src/Http/Requests/auth/ResetPasswordRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/bhry98-users-core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Http/Controllers/UsersAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/UsersAuthController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,8 +176,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PS-243.24978.50" />
-        <option value="bundled-php-predefined-a98d8de5180a-fbeb0b58ac0f-com.jetbrains.php.sharedIndexes-PS-243.24978.50" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PS-243.25659.45" />
+        <option value="bundled-php-predefined-a98d8de5180a-1ec7b7818973-com.jetbrains.php.sharedIndexes-PS-243.25659.45" />
       </set>
     </attachedChunks>
   </component>
@@ -214,15 +217,9 @@
       <workItem from="1740322496055" duration="8000" />
       <workItem from="1740326463252" duration="690000" />
       <workItem from="1740397610793" duration="1226000" />
-      <workItem from="1740476881105" duration="6693000" />
-    </task>
-    <task id="LOCAL-00002" summary="add &quot;prefer-stable&quot;: true in composer.json">
-      <option name="closed" value="true" />
-      <created>1738702162198</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1738702162198</updated>
+      <workItem from="1740476881105" duration="7942000" />
+      <workItem from="1740560038234" duration="4289000" />
+      <workItem from="1741092416448" duration="671000" />
     </task>
     <task id="LOCAL-00003" summary=".">
       <option name="closed" value="true" />
@@ -608,7 +605,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740489699261</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="..">
+      <option name="closed" value="true" />
+      <created>1740489819429</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1740489819429</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +631,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update users_core_sessions.php" />
     <MESSAGE value="update minimum-stability in composer.json to stable" />
     <MESSAGE value="testOutput" />
     <MESSAGE value="update composer.json" />
@@ -651,6 +655,7 @@
     <MESSAGE value="update UsersCoreUsersService.php" />
     <MESSAGE value="." />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value=".." />
+    <option name="LAST_COMMIT_MESSAGE" value=".." />
   </component>
 </project>
