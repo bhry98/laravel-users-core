@@ -18,7 +18,7 @@ class UsersCoreUsersVerifyModel extends Model
         "user_id",
         "expired_at",
         "created_at",
-        "update_at",
+        "updated_at",
     ];
     protected $casts = [
         "verify_code" => "integer",

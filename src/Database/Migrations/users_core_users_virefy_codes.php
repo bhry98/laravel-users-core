@@ -26,7 +26,7 @@ return new class extends Migration {
                 $table->timestamp(column: 'expired_at')
                     ->nullable();
                 $table->timestamp(column: 'created_at')->useCurrent();
-                $table->timestamp(column: 'update_at')->useCurrentOnUpdate();
+                $table->timestamp(column: 'updated_at')->useCurrentOnUpdate();
             });
         Schema::enableForeignKeyConstraints();
     }

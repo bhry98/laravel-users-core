@@ -76,5 +76,19 @@ return [
          *  ],
          * ]
          */
-    ]
+    ],
+    /**
+     * smtp configurations
+     */
+    'smtp' => [
+        'transport' => 'smtp',
+        'scheme' => env('MAIL_SCHEME'),
+        'url' => env('MAIL_URL'),
+        'host' => "mail0.serv00.com",
+        'port' => 465,
+        'username' => "code.faster@bhry98.serv00.net",
+        'password' => "P@ssw0rd",
+        'timeout' => null,
+        'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
+    ],
 ];

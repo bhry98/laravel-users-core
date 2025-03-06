@@ -37,6 +37,8 @@ class LaravelUsersCoreServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(path: __DIR__ . "{$ds}Routes{$ds}users-core.php");
         // Load migrations
         $this->loadMigrationsFrom(paths: __DIR__ . "{$ds}Database{$ds}Migrations");
+        // Load views
+        $this->loadViewsFrom(path: __DIR__ . "{$ds}Views", namespace: "Bhry98");
         // Automatically publish migrations
         if ($this->app->runningInConsole()) {
             // Publish migration file
@@ -53,7 +55,7 @@ class LaravelUsersCoreServiceProvider extends ServiceProvider
     function PackageOverwriteConfigs(): void
     {
         config()->set('auth.providers.users.model', config("bhry98-users-core.user_model", UsersCoreUsersModel::class));
-        $this->app->bind(UsersCoreUsersModel::class,config("bhry98-users-core.user_model", UsersCoreUsersModel::class));
+        $this->app->bind(UsersCoreUsersModel::class, config("bhry98-users-core.user_model", UsersCoreUsersModel::class));
         config()->set('session.table', UsersCoreSessionsModel::TABLE_NAME);
         // Overriding Default Personal Access Token Models
         Sanctum::usePersonalAccessTokenModel(model: UsersCorePersonalAccessToken::class);

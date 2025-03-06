@@ -20,9 +20,10 @@ class RegistrationUserRequest extends FormRequest
         $fixedData["city_id"] = $this->city;
         $fixedData["redirect_link"] = is_null($this->redirect_link) ? session("redirect_link") : $this->redirect_link;
         $fixedData["display_name"] = is_null($this->display_name) ? $this->first_name . " " . $this->last_name : $this->display_name;
-        $fixedData["username"] = is_null($this->username) ? $this->email: $this->username;
+        $fixedData["username"] = is_null($this->username) ? $this->email : $this->username;
         return $this->merge($fixedData);
     }
+
     public function rules(): array
     {
         $roles["username"] = [
@@ -103,14 +104,27 @@ class RegistrationUserRequest extends FormRequest
     protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator): void
     {
         if ($this->expectsJson()) {
+            $errors = collect((new \Illuminate\Validation\ValidationException($validator))->errors())->mapWithKeys(function ($messages, $key) {
+                return [self::attributes()[$key] ?? $key => $messages];
+            })->toArray();
+
             throw new \Illuminate\Http\Exceptions\HttpResponseException(
                 bhry98_response_validation_error(
-                    data: (new \Illuminate\Validation\ValidationException($validator))->errors(),
+                    data: $errors,
                     message: (new \Illuminate\Validation\ValidationException($validator))->getMessage()
                 )
             );
         }
         parent::failedValidation($validator);
+    }
+
+    public function attributes(): array
+    {
+        return [
+            "country_id" => "country",
+            "governorate_id" => "governorate",
+            "city_id" => "city",
+        ];
     }
 
     public function messages(): array

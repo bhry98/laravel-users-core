@@ -111,9 +111,13 @@ class RegistrationUserByTypeRequest extends FormRequest
     protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator): void
     {
         if ($this->expectsJson()) {
+            $errors = collect((new \Illuminate\Validation\ValidationException($validator))->errors())->mapWithKeys(function ($messages, $key) {
+                return [ self::attributes()[$key] ?? $key => $messages ];
+            })->toArray();
+
             throw new \Illuminate\Http\Exceptions\HttpResponseException(
                 bhry98_response_validation_error(
-                    data: (new \Illuminate\Validation\ValidationException($validator))->errors(),
+                    data: $errors,
                     message: (new \Illuminate\Validation\ValidationException($validator))->getMessage()
                 )
             );
@@ -121,6 +125,14 @@ class RegistrationUserByTypeRequest extends FormRequest
         parent::failedValidation($validator);
     }
 
+    public function attributes(): array
+    {
+        return [
+            "country_id" => "country",
+            "governorate_id" => "governorate",
+            "city_id" => "city",
+        ];
+    }
     public function messages(): array
     {
         return [];

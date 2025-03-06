@@ -19,10 +19,19 @@ class UserUpdateProfileRequest extends FormRequest
     public function prepareForValidation()
     {
         $user = request()->user();
-        $fixedData["country_id"] = !$this->country || is_null($this->country) ? $user->country_id : $this->country;
-        $fixedData["governorate_id"] = !$this->governorate || is_null($this->governorate) ? $user->governorate_id : $this->governorate;
-        $fixedData["city_id"] = !$this->city || is_null($this->city) ? $user->city_id : $this->city;
-        $fixedData["username"] = !$this->username || is_null($this->username) ? $user->username : $this->username;
+        $fixedData = [];
+        if ($this->country || !is_null($this->country)) {
+            $fixedData["country_id"] = $user->country;
+        }
+        if ($this->governorate || !is_null($this->governorate)) {
+            $fixedData["governorate_id"] = $user->governorate;
+        }
+        if ($this->city || !is_null($this->city)) {
+            $fixedData["city_id"] = $user->city;
+        }
+        if ($this->username || !is_null($this->username)) {
+            $fixedData["username"] = $user->username;
+        }
         return $this->merge($fixedData);
     }
 
@@ -98,14 +107,25 @@ class UserUpdateProfileRequest extends FormRequest
     protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator): void
     {
         if ($this->expectsJson()) {
+            $errors = collect((new \Illuminate\Validation\ValidationException($validator))->errors())->mapWithKeys(function ($messages, $key) {
+                return [self::attributes()[$key] ?? $key => $messages];
+            })->toArray();
             throw new \Illuminate\Http\Exceptions\HttpResponseException(
                 bhry98_response_validation_error(
-                    data: (new \Illuminate\Validation\ValidationException($validator))->errors(),
+                    data: $errors,
                     message: (new \Illuminate\Validation\ValidationException($validator))->getMessage()
                 )
             );
         }
         parent::failedValidation($validator);
+    }
+
+    public function attributes(): array
+    {
+        $message["country_id"] = "country";
+        $message["governorate_id"] = "governorate";
+        $message["city_id"] = "city";
+        return $message;
     }
 
     public function messages(): array

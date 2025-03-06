@@ -49,19 +49,21 @@ Route::middleware([
         ->group(function () {
             Route::post('/login', [UsersAuthController::class, 'login'])
                 ->name(name: 'login'); // without auth
+            Route::post('/resetPassword', [UsersAuthController::class, 'resetPassword'])
+                ->name(name: 'reset-password'); // without auth
+            Route::post('/verifyOtp', [UsersAuthController::class, 'verifyOtp'])
+                ->name(name: 'verify-otp'); // without auth
             Route::post('/registration', [UsersAuthController::class, 'registration'])
                 ->name(name: 'registration'); // without auth
             Route::post('/registrationByType', [UsersAuthController::class, 'registrationByType'])
-                ->name(name: 'registrationByType'); // without auth
+                ->name(name: 'registration-by-type'); // without auth
             Route::get('/logout', [UsersAuthController::class, 'logout'])
                 ->name(name: 'logout')
                 ->middleware(['auth:sanctum']); // without auth
+             Route::post('/updatePassword', [UsersAuthController::class, 'updatePassword'])
+                ->name(name: 'update-password')
+                ->middleware(['auth:sanctum']); // without auth
         });
-
-
-
-
-
     // users management
     Route::middleware(config(key: 'bhry98-users-core.users_apis.middleware', default: ['api', 'auth:sanctum']))
         ->prefix(config(key: 'bhry98-users-core.users_apis.prefix', default: 'users'))

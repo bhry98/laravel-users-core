@@ -7,6 +7,8 @@ use Bhry98\LaravelUsersCore\Http\Requests\auth\LoginRequest;
 use Bhry98\LaravelUsersCore\Http\Requests\auth\RegistrationUserByTypeRequest;
 use Bhry98\LaravelUsersCore\Http\Requests\auth\RegistrationUserRequest;
 use Bhry98\LaravelUsersCore\Http\Requests\auth\ResetPasswordRequest;
+use Bhry98\LaravelUsersCore\Http\Requests\auth\UpdatePasswordRequest;
+use Bhry98\LaravelUsersCore\Http\Requests\auth\VerifyOtpRequest;
 use Bhry98\LaravelUsersCore\Http\Resources\UserResource;
 use Bhry98\LaravelUsersCore\Services\UsersCoreUsersService;
 use Illuminate\Support\Facades\DB;
@@ -68,7 +70,6 @@ class UsersAuthController extends Controller
 
     function login(LoginRequest $request, UsersCoreUsersService $usersCoreServices): \Illuminate\Http\JsonResponse
     {
-
         try {
             $loginWay = config(key: "bhry98-users-core.login_via");
             $token = match ($loginWay) {
@@ -112,15 +113,52 @@ class UsersAuthController extends Controller
     {
         try {
             $resetPasswordWay = config(key: "bhry98-users-core.reset_password_via");
-            $token = match ($resetPasswordWay) {
-                "email" => $usersCoreServices->loginViaPhoneAndPassword($request->validated()),
-                default => $usersCoreServices->loginViaUsernameAndPassword($request->validated()),
+            $resetCode = match ($resetPasswordWay) {
+                "email" => $usersCoreServices->sendOtpViaEmail($request->email),
+                default => $usersCoreServices->sendOtpViaEmail($request->email),
             };
-
-            if ($usersCoreServices->logout()) {
-                return bhry98_response_success_with_data(message: __("bhry98::responses.logout-success"));
+            if ($resetCode) {
+                return bhry98_response_success_with_data(message: __("bhry98::responses.reset-code-send-success"));
             } else {
-                return bhry98_response_success_without_data(message: __("bhry98::responses.logout-failed"));
+                return bhry98_response_success_without_data(message: __("bhry98::responses.reset-code-send-failed"));
+            }
+        } catch (\Exception $e) {
+            return bhry98_response_internal_error([
+                'error' => $e->getMessage(),
+                'code' => $e->getCode(),
+                'line' => $e->getLine(),
+            ]);
+        }
+    }
+
+    function verifyOtp(VerifyOtpRequest $request, UsersCoreUsersService $usersCoreServices): \Illuminate\Http\JsonResponse
+    {
+        try {
+            $verifyCode = $usersCoreServices->verifyOtp($request->email, $request->otp);
+            if ($verifyCode) {
+                $token = $usersCoreServices->loginViaEmail($request->email);
+                return bhry98_response_success_with_data(data: ['token'=>$token], message: __("bhry98::responses.verify-otp-success"));
+            } else {
+                return bhry98_response_success_without_data(message: __("bhry98::responses.verify-otp-failed"));
+            }
+        } catch (\Exception $e) {
+            return bhry98_response_internal_error([
+                'error' => $e->getMessage(),
+                'code' => $e->getCode(),
+                'line' => $e->getLine(),
+            ]);
+        }
+    }
+
+    function updatePassword(UpdatePasswordRequest $request, UsersCoreUsersService $usersCoreServices): \Illuminate\Http\JsonResponse
+    {
+        try {
+            $updatePassword = $usersCoreServices->updateAuthUserPassword($request->password);
+            if ($updatePassword) {
+                $usersCoreServices->logout();
+                return bhry98_response_success_with_data( message: __("bhry98::responses.password-updated-success"));
+            } else {
+                return bhry98_response_success_without_data(message: __("bhry98::responses.password-updated-failed"));
             }
         } catch (\Exception $e) {
             return bhry98_response_internal_error([

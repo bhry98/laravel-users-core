@@ -6,6 +6,7 @@
     "users management",
     "auth",
     "jwt",
+    "bhry98",
     "user types"
   ],
   "autoload": {

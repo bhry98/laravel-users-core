@@ -5,8 +5,12 @@ namespace Bhry98\LaravelUsersCore\Services;
 use Bhry98\LaravelUsersCore\Models\UsersCoreExtraColumnsModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersModel;
 use Bhry98\LaravelUsersCore\Models\UsersCoreUsersVerifyModel;
+use Bhry98\LaravelUsersCore\Notifications\SendResetPasswordOtpViaEmail;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class UsersCoreUsersService
 {
@@ -35,6 +39,10 @@ class UsersCoreUsersService
 
     public function createNewVerifyCode(UsersCoreUsersModel $user)
     {
+
+        UsersCoreUsersVerifyModel::where([
+            "user_id" => $user?->id,
+        ])->update([]);
         $record = UsersCoreUsersVerifyModel::create([
             "verify_code" => rand(126457, 968748),
             "user_id" => $user?->id,
@@ -48,6 +56,21 @@ class UsersCoreUsersService
             // if added successfully add log [error] and return user
             Log::error(message: "User {$user->code} request a new verify code field");
             return null;
+        }
+    }
+
+    public function verifyOtp(string $user_email, int $otp): bool
+    {
+        $user = UsersCoreUsersModel::where('email', $user_email)->first();
+        $record = UsersCoreUsersVerifyModel::where([
+            "verify_code" => $otp,
+            "user_id" => $user?->id,
+        ])->first();
+        $is_past = Carbon::parse($record->expired_at)->isPast();
+        if ($record && !$is_past) {
+            return $record->update(['expired_at' => now(config(key: 'app.timezone'))->subMinute()]);
+        } else {
+            return false;
         }
     }
 
@@ -76,6 +99,14 @@ class UsersCoreUsersService
 
     public function loginViaUser(UsersCoreUsersModel|\Illuminate\Contracts\Auth\Authenticatable $user): string
     {
+        Auth::guard(name: config(key: "bhry98-users-core.guard"))->loginUsingId($user->id);
+        $tokenResult = $user->createToken($user->code);
+        return $tokenResult->plainTextToken;
+    }
+
+    public function loginViaEmail(string $user_email): string
+    {
+        $user = UsersCoreUsersModel::where('email', $user_email)->first();
         Auth::guard(name: config(key: "bhry98-users-core.guard"))->loginUsingId($user->id);
         $tokenResult = $user->createToken($user->code);
         return $tokenResult->plainTextToken;
@@ -118,6 +149,7 @@ class UsersCoreUsersService
 
     public function logout(): bool
     {
+        Log::info("User logged out successfully", ['user' => Auth::user()]);
         Auth::user()?->currentAccessToken()->delete();
         Auth::forgetUser();
         return !auth()->check();
@@ -136,4 +168,23 @@ class UsersCoreUsersService
         }
         return $update;
     }
+
+    public function sendOtpViaEmail(string $user_email)
+    {
+        $user = UsersCoreUsersModel::where('email', $user_email)->first();
+        if (!$user) return null;
+        $otp = self::createNewVerifyCode($user);
+        Log::info("User created otp successfully", ['user' => $user, "otp" => $otp]);
+        Config::set('mail.mailers.smtp', config("bhry98-users-core.smtp"));
+        Mail::mailer("smtp")->to($user->email)->send(new SendResetPasswordOtpViaEmail($otp, $user));
+        return $otp;
+    }
+
+    public function updateAuthUserPassword($new_password): bool
+    {
+        $user = self::getAuthUser();
+        $user->password = $new_password;
+        return $user->save();
+    }
+
 }
